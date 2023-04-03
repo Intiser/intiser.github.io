@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'intiser_portfolio';
+  constructor(){
+    
+  }
+
+  scroll(target: HTMLElement){
+    target.scrollIntoView();
+  }
+
 }
