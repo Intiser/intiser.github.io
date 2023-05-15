@@ -20,32 +20,32 @@
     </div> -->
     <div class="sidebar-items">
         <mat-nav-list>
-            <mat-list-item>
+            <mat-list-item (click)="clicked(PageConstants.HOME)">
                 <mat-icon class="material-symbols-outlined">home</mat-icon>
                 <span class="mat-item-text"> Home </span>
             </mat-list-item>
     
-            <mat-list-item>
+            <mat-list-item (click)="clicked(PageConstants.ABOUT)">
+                <mat-icon class="material-symbols-outlined">info</mat-icon>
+                <span class="mat-item-text"> About </span>
+            </mat-list-item>
+
+            <mat-list-item (click)="clicked(PageConstants.EXPERIENCE)">
                 <mat-icon class="material-symbols-outlined">work</mat-icon>
                 <span class="mat-item-text"> Work Experience </span>
             </mat-list-item>
     
-            <mat-list-item>
+            <mat-list-item (click)="clicked(PageConstants.STUDY)">
                 <mat-icon class="material-symbols-outlined">school</mat-icon>
                 <span class="mat-item-text"> Education </span>
             </mat-list-item>
     
-            <mat-list-item>
+            <mat-list-item (click)="clicked(PageConstants.AWARDS)">
                 <mat-icon class="material-symbols-outlined">workspace_premium</mat-icon>
                 <span class="mat-item-text"> Awards </span>
             </mat-list-item>
-    
-            <mat-list-item>
-                <mat-icon class="material-symbols-outlined">info</mat-icon>
-                <span class="mat-item-text"> About </span>
-            </mat-list-item>
-    
-            <mat-list-item>
+
+            <mat-list-item (click)="clicked(PageConstants.CONTACT)">
                 <mat-icon class="material-symbols-outlined">contact_support</mat-icon>
                 <span class="mat-item-text"> Contact </span>
             </mat-list-item>

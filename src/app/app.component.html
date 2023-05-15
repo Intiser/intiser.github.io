@@ -8,7 +8,7 @@
 <router-outlet></router-outlet> -->
 <div fxLayout="row" class="example-container"> 
     
-    <mat-sidenav-container class="example-sidenav-container">
+    <mat-sidenav-container #document class="example-sidenav-container">
         <mat-sidenav mode="side" class="sidebar" opened>
             <app-sidebar></app-sidebar>
         </mat-sidenav>
@@ -18,11 +18,27 @@
 
 
         <mat-sidenav-content>
-            <app-landing></app-landing>
-            <app-home></app-home>
+            <div class="container-item" #home> <app-landing></app-landing> </div>
+            
+            <div class="container-item" #about>
+                <app-about></app-about>
+            </div>
+            <!-- <app-home></app-home> -->
+            
+
+            <div class="container-item" #experience>
             <app-experience></app-experience>
-            <app-about></app-about>
-            <app-contact></app-contact> 
+            </div>
+
+            <div class="container-item" #study>
+                <app-study></app-study>
+                </div>
+
+            <div class="container-item" #contact>
+                <app-contact></app-contact> 
+            </div>
+            
+            
         </mat-sidenav-content>
     </mat-sidenav-container>
 

@@ -1,4 +1,191 @@
 /* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined");
+// @import url("/src/style/colors.module.css");
+// @import url("/src/style/theme.dark.css");
+// @import url(/src/style/tokens.css);
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; overflow: hidden; }
+
+.background{
+    background-color: #1f1b16;
+}
+
+:root{
+    $primary-color: #f8bc49;
+}
+
+
+// $md-primary: (
+//   0: #000000,
+//   10: #271900,
+//   20: #422c00,
+//   25: #503700,
+//   30: #5e4100,
+//   35: #6d4c00,
+//   40: #7d5800,
+//   50: #9c6f00,
+//   60: #bc8711,
+//   70: #daa12f,
+//   80: #f8bc49,
+//   90: #ffdea9,
+//   95: #ffeed8,
+//   98: #fff8f3,
+//   99: #fffbff,
+//   100: #ffffff,
+// );
+
+// $md-accent: (
+//     0: #000000,
+//     10: #032100,
+//     20: #073900,
+//     25: #0c4601,
+//     30: #1a520c,
+//     35: #275e18,
+//     40: #336b23,
+//     50: #4b843a,
+//     60: #649f51,
+//     70: #7eba69,
+//     80: #98d781,
+//     90: #b3f39b,
+//     95: #cbffb5,
+//     98: #edffe0,
+//     99: #f7ffed,
+//     100: #ffffff,
+// );
+
+// @include mat.core();
+// @include mat.strong-focus-indicators();
+
+
+// $dark-theme: mat.define-dark-theme((
+//  color: (
+//    primary: $md-primary,
+//    accent: $md-accent,
+//  ),
+//   // Only include `typography` and `density` in the default dark theme.
+//   typography: mat.define-typography-config(),
+//   density: 0,
+// ));
+
+// @include mat.core-theme($dark-theme);
+// @include mat.button-theme($dark-theme);
+
+// $md-alternative: (
+//   50: #f3fcfb,
+//   100: #e1f8f5,
+//   200: #cdf3ef,
+//   300: #b9eee9,
+//   400: #aaebe4,
+//   500: #9be7df,
+//   600: #93e4db,
+//   700: #89e0d7,
+//   800: #7fddd2,
+//   900: #6dd7ca,
+//   A100: #ffffff,
+//   A200: #ffffff,
+//   A400: #e8fffc,
+//   A700: #cffff9,
+//   contrast: (
+//     50: #000000,
+//     100: #000000,
+//     200: #000000,
+//     300: #000000,
+//     400: #000000,
+//     500: #000000,
+//     600: #000000,
+//     700: #000000,
+//     800: #000000,
+//     900: #000000,
+//     A100: #000000,
+//     A200: #000000,
+//     A400: #000000,
+//     A700: #000000,
+//   ),
+// );
+
+// $md-warn: (
+//   50: #fcf2e7,
+//   100: #f8dec3,
+//   200: #f3c89c,
+//   300: #eeb274,
+//   400: #eaa256,
+//   500: #e69138,
+//   600: #e38932,
+//   700: #df7e2b,
+//   800: #db7424,
+//   900: #d56217,
+//   A100: #ffffff,
+//   A200: #ffe3d4,
+//   A400: #ffc3a1,
+//   A700: #ffb287,
+//   contrast: (
+//     50: #000000,
+//     100: #000000,
+//     200: #000000,
+//     300: #000000,
+//     400: #000000,
+//     500: #000000,
+//     600: #000000,
+//     700: #000000,
+//     800: #000000,
+//     900: #ffffff,
+//     A100: #000000,
+//     A200: #000000,
+//     A400: #000000,
+//     A700: #000000,
+//   ),
+// );
+
+// $md-error: (
+//   50: #f9e0e0,
+//   100: #f0b3b3,
+//   200: #e68080,
+//   300: #db4d4d,
+//   400: #d42626,
+//   500: #cc0000,
+//   600: #c70000,
+//   700: #c00000,
+//   800: #b90000,
+//   900: #ad0000,
+//   A100: #ffd7d7,
+//   A200: #ffa4a4,
+//   A400: #ff7171,
+//   A700: #ff5858,
+//   contrast: (
+//     50: #000000,
+//     100: #000000,
+//     200: #000000,
+//     300: #ffffff,
+//     400: #ffffff,
+//     500: #ffffff,
+//     600: #ffffff,
+//     700: #ffffff,
+//     800: #ffffff,
+//     900: #ffffff,
+//     A100: #000000,
+//     A200: #000000,
+//     A400: #000000,
+//     A700: #000000,
+//   ),
+// );
+
+
+
+// @include mat.core();
+// @include mat.strong-focus-indicators();
+
+
+// $dark-theme: mat.define-dark-theme((
+//  color: (
+//    primary: #f8bd48,
+//    accent: #97d783,
+//  ),
+//   // Only include `typography` and `density` in the default dark theme.
+//   typography: mat.define-typography-config(),
+//   density: 0,
+// ));
+
+
+

@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
-import { ServicesComponent } from './services/services.component';
 import { ExperienceComponent } from './experience/experience.component';
 import { WorksComponent } from './works/works.component';
 import { ContactComponent } from './contact/contact.component';
@@ -15,6 +14,11 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatIconModule} from '@angular/material/icon';
 import { LandingComponent } from './landing/landing.component';
 import {MatGridListModule} from '@angular/material/grid-list';
+import {MatTabsModule} from '@angular/material/tabs';
+import { StudyComponent } from './study/study.component';
+import {MatStepperModule} from '@angular/material/stepper';
+import { HttpClientModule } from '@angular/common/http';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 
 @NgModule({
@@ -22,11 +26,11 @@ import {MatGridListModule} from '@angular/material/grid-list';
     AppComponent,
     HomeComponent,
     AboutComponent,
-    ServicesComponent,
     ExperienceComponent,
     WorksComponent,
     ContactComponent,
-    LandingComponent
+    LandingComponent,
+    StudyComponent
   ],
   imports: [
     BrowserModule,
@@ -34,9 +38,13 @@ import {MatGridListModule} from '@angular/material/grid-list';
     BrowserAnimationsModule,
     LayoutModule,
     FlexLayoutModule,
+    MatExpansionModule,
     MatSidenavModule,
     MatIconModule,
-    MatGridListModule
+    MatGridListModule,
+    MatTabsModule,
+    MatStepperModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
