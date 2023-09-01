@@ -6,32 +6,30 @@
 <app-experience></app-experience>
 </div>
 <router-outlet></router-outlet> -->
+<!-- <div class="rounded" [style.top]="showY" [style.left]="showX" #child></div> -->
+
 <div fxLayout="row" class="example-container"> 
     
-    <mat-sidenav-container #document class="example-sidenav-container">
+    <!-- <mat-sidenav-container #document class="example-sidenav-container" >
         <mat-sidenav mode="side" class="sidebar" opened>
             <app-sidebar></app-sidebar>
         </mat-sidenav>
-        <!-- <mat-sidenav mode="side" class="right-sidebar" position="end" opened>
-            <app-right-sidebar></app-right-sidebar>
-        </mat-sidenav> -->
 
 
         <mat-sidenav-content>
-            <div class="container-item" #home> <app-landing></app-landing> </div>
+            <div id="first" (insideViewport)="onElementView($event)" (mousewheel)="onElementView($event)" (mousemove)="onElementView($event)" class="container-item"  #home> <app-landing></app-landing> </div>
             
-            <div class="container-item" #about>
+            <div (scroll)="onScroll($event)" class="container-item" #about>
                 <app-about></app-about>
             </div>
-            <!-- <app-home></app-home> -->
             
 
-            <div class="container-item" #experience>
-            <app-experience></app-experience>
+            <div class="container-item"  #experience>
+                <app-experience></app-experience>
             </div>
 
             <div class="container-item" #study>
-                <app-study></app-study>
+                <app-study ></app-study>
                 </div>
 
             <div class="container-item" #contact>
@@ -40,6 +38,67 @@
             
             
         </mat-sidenav-content>
+    </mat-sidenav-container> -->
+
+    <div fxLayout="column">
+
+        <div class="sidebar">
+            <app-sidebar></app-sidebar>
+        </div>
+        <div fxLayout="column" class="container">
+            <div id="first" (insideViewport)="onElementView($event)" (mousewheel)="onElementView($event)" (mousemove)="onElementView($event)" class="container-item"  #home> <app-landing></app-landing> </div>
+            
+            <div (scroll)="onScroll($event)" class="container-item" #about>
+                <app-about></app-about>
+            </div>
+            
+
+            <div class="container-item"  #experience>
+                <app-experience></app-experience>
+            </div>
+
+            <div class="container-item" #study>
+                <app-study ></app-study>
+                </div>
+
+            <div class="container-item" #contact>
+                <app-contact></app-contact> 
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <!-- <mat-sidenav-container class="sidebar">
+        <div >
+            <app-sidebar></app-sidebar>
+        </div>
     </mat-sidenav-container>
+    <mat-sidenav-content>
+        <div class="example-sidenav-container">
+            <div id="first" (insideViewport)="onElementView($event)" (mousewheel)="onElementView($event)" (mousemove)="onElementView($event)" class="container-item"  #home> <app-landing></app-landing> </div>
+                
+                <div (scroll)="onScroll($event)" class="container-item" #about>
+                    <app-about></app-about>
+                </div>
+                
+    
+                <div class="container-item"  #experience>
+                    <app-experience></app-experience>
+                </div>
+    
+                <div class="container-item" #study>
+                    <app-study ></app-study>
+                    </div>
+    
+                <div class="container-item" #contact>
+                    <app-contact></app-contact> 
+                </div>
+        </div>
+
+    </mat-sidenav-content> -->
+
+    
 
 </div> 

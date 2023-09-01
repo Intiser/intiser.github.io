@@ -12,6 +12,59 @@ export class SidebarComponent implements OnInit {
 
   PageConstants = PageConstants;
 
+
+  icon_array = [
+    {
+      path:"../../../assets/svg/fb_outline.svg",
+      alter:"../../../assets/svg/fb_outline_100.svg",
+      mouse: false
+    },
+    {
+      path:"../../../assets/svg/github.svg",
+      alter:"../../../assets/svg/github_100.svg",
+      mouse: false
+    },
+    {
+      path:"../../../assets/svg/insta_outline.svg",
+      alter:"../../../assets/svg/insta_outline_100.svg",
+      mouse: false
+    },
+    {
+      path:"../../../assets/svg/linkedin_outline.svg",
+      alter:"../../../assets/svg/linkedin_outline_100.svg",
+      mouse: false
+    },
+    // {
+    //   path:"../../../assets/svg/facebook.svg"
+    // },
+  ]
+
+  array = [
+    {
+      title: "About",
+      page: PageConstants.ABOUT,
+      mouse: false
+    },
+    {
+      title: "Experience",
+      page: PageConstants.EXPERIENCE,
+      mouse: false
+    },
+    {
+      title: "Education",
+      page: PageConstants.STUDY,
+      mouse: false
+    },
+    {
+      title: "Contact",
+      page: PageConstants.CONTACT,
+      mouse: false
+    },
+  ]
+
+
+  className =  PageConstants.ABOUT;
+
   constructor(private pageService:PageService) { 
 
   }
@@ -22,6 +75,16 @@ export class SidebarComponent implements OnInit {
 
   clicked(string: any){
     this.pageService.setSelectedPageSubject(string);
+    this.className =  string;
   }
 
+  mouseOver(item:any){
+    item.mouse = true;
+  }
+
+  mouseOut(item:any){
+    item.mouse = false;
+  }
+
+ 
 }

@@ -6,8 +6,8 @@
         </div>
 
         <div fxLayout="column">
-            <div class="experience">
-                <mat-accordion>
+            <div fxLayout="row" fxLayoutGap="1px" class="experience">
+                <!-- <mat-accordion>
                     <mat-expansion-panel expanded (opened)="true"
                                           (closed)="false">
                       <mat-expansion-panel-header>
@@ -20,7 +20,42 @@
                       </mat-expansion-panel-header>
                       <p>I'm visible because I am open</p>
                     </mat-expansion-panel>
-                  </mat-accordion>
+                  </mat-accordion> -->
+
+
+                  
+                  <!-- <app-vertical-tab-list>
+                      <app-vertical-tab label="Title 1">
+                        Hello 1
+                      </app-vertical-tab>
+                      <app-vertical-tab label="Title 2">
+                        Hello 2
+                      </app-vertical-tab>
+                      <app-vertical-tab label="Title 3">
+                        Hello 3
+                      </app-vertical-tab>
+                  </app-vertical-tab-list> -->
+
+                <div class="list">
+                    <mat-selection-list #tabs   [multiple]="false">
+                        <mat-list-option *ngFor="let tab of tabsList" (click)="selectTab(tab)">
+                            {{tab.label}}
+                        </mat-list-option>
+                    
+                    </mat-selection-list>
+                </div>
+                <div fxLayout="column" class="container">
+                  <div class="sub-title">
+                     {{ selectedTab.title }}
+                  </div>
+                  <div class="time-frame">
+                    {{ selectedTab.date }}
+                  </div>
+                  <div class="text">
+                    {{ selectedTab.description }}
+                  </div>
+                  
+                </div>
 
             </div>
         </div>

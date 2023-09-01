@@ -1,30 +1,159 @@
-@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0");
+// @import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0");
+@use "@material/ripple";
+@import "../../../styles.scss";
 
-.mat-item-text{
-    margin-left: 16px;
-    margin-top: 2px;
-    // color: #f7dfbb;
-    color: white;
-    font: bold;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
 
 .sidebar{
-    height: auto;
+    height: 100%;
     width: 100%;
-    bottom: 0;
-    top: 0;
-    position: absolute;
-    background-color: #1f1b16;
-    align-content: center;
-    align-self: center;
-    margin: auto;
+    // margin-left: 20%;
+    // margin-top: 10%;
+    // position: absolute;
+    // //background-color: #1f1b16;
+    // align-content: center;
+    // align-self: center;
+    // //margin: auto;
+    padding-top: 10%;
+    padding-left: 40%;
+    overflow: hidden;
+    font-family: $font;
+}
+
+.info{
+  margin-right: 40px;
+  width: 100%;
+}
+
+.headline{
+    width: 100%;
+    height: auto;
+    //color: #f7dfbb;
+    font-size: 40px;
+    font-style: bold;
+    font-family: $font-bold;
+    //margin-left: 16px;
+    margin-top: 40px;
+    text-align: left;
+    //font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+
+.subtitle{
+  width: 100%;
+  height: auto;
+  //color: #f7dfbb;
+  font-size: 18px;
+  font-style: bold;
+  //margin-left: 16px;
+  margin-top: 24px;
+  text-align: left;
+  //font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+
+.ordinary-text{
+  width: 50%;
+  height: auto;
+  font-size: 14px;
+  font-style: bold;
+  margin-top: 24px;
+  text-align: left;
+  color: $on-background-color;
+  opacity: 70%;
 }
 
 .sidebar-items{
-  padding-top: 100%;
+  //padding-top: 100%;
   width: 100%;
+  margin-top: 10%;
 }
+
+.custom-item-sidenav{
+    
+  height: 40px;
+  text-align: left;
+  vertical-align: middle;
+  // color: #f7dfbb;
+  //color: white;
+  font: bold;
+  cursor: default;
+  //font-family: Verdana, Geneva, Tahoma, sans-serif;
+  // @include ripple.surface;
+  // @include ripple.radius-bounded;
+  // @include ripple.states-base-color(black);
+  // @include ripple.states-opacities((hover: .1, focus: .3, press: .4));
+  
+
+}
+
+.custom-item{
+  margin-left: 16px;
+  margin-top: 10px;
+  opacity: 70%;
+  cursor: pointer;
+  font: bold;
+  font-family: $font-bold;
+}
+
+.custom-item-selected{
+  margin-left: 16px;
+  margin-top: 10px;
+  opacity: 100%;
+  cursor: pointer;
+  font: bold;
+  font-family: $font-bold;
+}
+
+
+.mat-item-left{
+    display:inline;
+    margin-top: 18px;
+    height: 1px;
+    width: 40px;
+    //border-left: solid $primary-color;
+    border-top: 2px solid $primary-color;
+    //background-color: $primary-color;
+    opacity: 100%;
+    position: relative;
+}
+
+.mat-item-left-blank{
+    display: inline;
+    margin-top: 18px;
+    height: 1px;
+    width: 20px;
+    //border-left: solid $primary-color;
+    border-top: 2px solid $primary-color;
+    //background-color: $primary-color;
+    opacity: 70%;
+    vertical-align: middle;
+}
+
+.bottom{
+  width: 100%;
+  height: 15%;
+  //background-color: red;
+  bottom: 0;
+  position: fixed;
+}
+
+.icon_div{
+  width: 4%;
+  height: auto;
+}
+
+.icon-color{
+  cursor: pointer;
+}
+
+
+
+// custom-item-sidenav-hover{
+//   background-color: yellow;
+// }
+
+
+
+
+/// not necessary 
 
 .icon-container{
   width: 100%;
@@ -32,15 +161,15 @@
   padding-top: 40px;
   margin-top: 50px;
   margin-left: 16px;
-  font-size: 40px;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
-  font-weight: bold;
-  color: aqua;
+  //font-size: 40px;
+  //font-family:Verdana, Geneva, Tahoma, sans-serif;
+  //font-weight: bold;
+  //color: aqua;
 }
 
-// .title-container{
+// // .title-container{
   
-// }
+// // }
 
 .sidebar-icon-container{
   height: 200px;
@@ -50,7 +179,7 @@
 
 .material-symbols-outlined {
   // color: #f7dfbb;
-  color: white;
+  //color: white;
   font-variation-settings:
   'FILL' 0,
   'wght' 400,

@@ -1,57 +1,35 @@
 <div class="sidebar" fxLayout="column">
 
-    <!-- <div fxLayout="column" class="sidebar-icon-container">
-        <div>
-            <span class="icon-container">
-                S
+    <div fxLayout="column" class="info">
+        <div class="headline">
+            Syed Intiser Ahsan
+        </div>
+        <div class="subtitle">
+            Student At TU Chemnitz
+        </div>
+        <div class="ordinary-text">
+            I build accessible, inclusive products and digital experiences for the web.
+        </div>
+    </div>
+    <div class="sidebar-items" fxLayout="column">
+
+        <div *ngFor="let item of array" class="custom-item-sidenav" fxLayout="row"  clickable (click)="clicked(item.page)" >
+            <span [class]="className===item.page||item.mouse==true?'mat-item-left':'mat-item-left-blank'"></span>
+            <!-- <span [class]="(className!==item.page && item.mouse==true)?'mat-item-left':'mat-item-left-blank'"></span> -->
+            <span [class]="className===item.page||item.mouse==true? 'custom-item-selected':'custom-item'" (mouseover)="mouseOver(item)" (mouseout)="mouseOut(item)">
+                {{item.title}}
             </span>
         </div>
-        <div fxLayout="row">
-            <span class="title-container">
-                Syed 
-            </span>
-            <span class="title-container">
-                Intiser 
-            </span>
-            <span class="title-container">
-                Ahsan 
+
+    
+    </div>
+    <div fxLayout="row" class="bottom">
+        <div *ngFor="let item of icon_array" class="icon_div">
+            <span (mouseover)="mouseOver(item)" (mouseout)="mouseOut(item)">
+                <img [src]="item.mouse?item.alter:item.path" width="30px" class="icon-color">
+                <!-- <img *ngIf="item.mouse==true" [src]="item.alter" width="40%" class="icon-color"> -->
             </span>
         </div>
-    </div> -->
-    <div class="sidebar-items">
-        <mat-nav-list>
-            <mat-list-item (click)="clicked(PageConstants.HOME)">
-                <mat-icon class="material-symbols-outlined">home</mat-icon>
-                <span class="mat-item-text"> Home </span>
-            </mat-list-item>
-    
-            <mat-list-item (click)="clicked(PageConstants.ABOUT)">
-                <mat-icon class="material-symbols-outlined">info</mat-icon>
-                <span class="mat-item-text"> About </span>
-            </mat-list-item>
-
-            <mat-list-item (click)="clicked(PageConstants.EXPERIENCE)">
-                <mat-icon class="material-symbols-outlined">work</mat-icon>
-                <span class="mat-item-text"> Work Experience </span>
-            </mat-list-item>
-    
-            <mat-list-item (click)="clicked(PageConstants.STUDY)">
-                <mat-icon class="material-symbols-outlined">school</mat-icon>
-                <span class="mat-item-text"> Education </span>
-            </mat-list-item>
-    
-            <mat-list-item (click)="clicked(PageConstants.AWARDS)">
-                <mat-icon class="material-symbols-outlined">workspace_premium</mat-icon>
-                <span class="mat-item-text"> Awards </span>
-            </mat-list-item>
-
-            <mat-list-item (click)="clicked(PageConstants.CONTACT)">
-                <mat-icon class="material-symbols-outlined">contact_support</mat-icon>
-                <span class="mat-item-text"> Contact </span>
-            </mat-list-item>
-    
-        </mat-nav-list>
-
     </div>
 
     

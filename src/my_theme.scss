@@ -1,0 +1,217 @@
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+// $my-theme-primary: mat.define-palette($mat-indigo);
+// $my-theme-accent: mat.define-palette($mat-pink, A200, A100, A400);
+// $my-theme-error: mat.define-palette($mat-red);
+
+// $my-theme: mat.define-light-theme((
+//  color: (
+//    primary: $my-theme-primary,
+//    accent: $my-theme-accent,
+//    warn: $my-theme-warn,
+//  ),
+//  typography: mat.define-typography-config(),
+//  density: 0,
+// ));
+
+// @include mat.core-theme($my-theme);
+// @include mat.all-component-themes($my-theme);
+
+// "./node_modules/@angular/material/prebuilt-themes/purple-green.css",
+
+
+$md-primary: (
+  50: #271900,
+  100: #422c00,
+  200: #503700,
+  300: #5e4100,
+  400: #6d4c00,
+  500: #7d5800,
+  600: #9c6f00,
+  700: #bc8711,
+  800: #daa12f,
+  900: #f8bc49,
+  A100: #ffdea9,
+  A200: #ffeed8,
+  A400: #fff8f3,
+  A700: #fffbff,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #000000,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+$md-accent: (
+    50: #032100,
+    100: #073900,
+    200: #0c4601,
+    300: #1a520c,
+    400: #275e18,
+    500: #336b23,
+    600: #4b843a,
+    700: #649f51,
+    800: #7eba69,
+    900: #98d781,
+    A100: #b3f39b,
+    A200: #cbffb5,
+    A300: #edffe0,
+    A700: #f7ffed,
+    contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #000000,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+$md-alternative: (
+  50: #f3fcfb,
+  100: #e1f8f5,
+  200: #cdf3ef,
+  300: #b9eee9,
+  400: #aaebe4,
+  500: #9be7df,
+  600: #93e4db,
+  700: #89e0d7,
+  800: #7fddd2,
+  900: #6dd7ca,
+  A100: #ffffff,
+  A200: #ffffff,
+  A400: #e8fffc,
+  A700: #cffff9,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #000000,
+    700: #000000,
+    800: #000000,
+    900: #000000,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+$md-warn: (
+  50: #fcf2e7,
+  100: #f8dec3,
+  200: #f3c89c,
+  300: #eeb274,
+  400: #eaa256,
+  500: #e69138,
+  600: #e38932,
+  700: #df7e2b,
+  800: #db7424,
+  900: #d56217,
+  A100: #ffffff,
+  A200: #ffe3d4,
+  A400: #ffc3a1,
+  A700: #ffb287,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #000000,
+    700: #000000,
+    800: #000000,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+$md-error: (
+  50: #f9e0e0,
+  100: #f0b3b3,
+  200: #e68080,
+  300: #db4d4d,
+  400: #d42626,
+  500: #cc0000,
+  600: #c70000,
+  700: #c00000,
+  800: #b90000,
+  900: #ad0000,
+  A100: #ffd7d7,
+  A200: #ffa4a4,
+  A400: #ff7171,
+  A700: #ff5858,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #ffffff,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+
+@include mat.core();
+
+$my-primary: mat.define-palette($md-primary);
+$my-accent: mat.define-palette($md-accent);
+$my-alternative: mat.define-palette($md-alternative);
+$my-warn: mat.define-palette($md-warn);
+$my-error: mat.define-palette($md-error);
+ // @include mat.strong-focus-indicators();
+
+
+$dark-theme: mat.define-light-theme((
+ color: (
+   primary: $my-primary,
+   accent: $my-accent,
+   alternative: $my-alternative,
+   warn: $my-warn,
+   error: $my-error,
+   background-color: #1f1b16,
+ ),
+  // Only include `typography` and `density` in the default dark theme.
+  typography: mat.define-typography-config(),
+  density: 0,
+));
+
+@include mat.core-theme($dark-theme);
+//@include mat.button-theme($dark-theme);
+@include mat.all-component-themes($dark-theme);

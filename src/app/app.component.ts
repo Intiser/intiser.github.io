@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef, ViewContainerRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, ViewContainerRef, HostListener } from '@angular/core';
 import { PageService } from './services/page-service';
 import { PageConstants } from './models/page-constants';
 
@@ -27,12 +27,28 @@ export class AppComponent implements OnInit{
   @ViewChild('contact')
   contact: ElementRef;
 
+  showX = "100px";
+  showY = "100px";
+
+  @ViewChild('child') child:ElementRef;
+
 
   constructor(private pageService:PageService){
     
   }
 
   ngOnInit(): void {
+
+    let cursorRounded = document.querySelector('.rounded');
+
+    window.addEventListener('mousemove', (e:any)=>{
+      console.log(event);
+
+      this.showX = (e.x - 50) + "px";
+      this.showY = (e.y - 50) + "px";
+
+    });
+
     this.pageService.getSelectedPage().
       subscribe((result)=>{
         console.log(result);
@@ -59,5 +75,33 @@ export class AppComponent implements OnInit{
   scroll(target: HTMLElement){
     target.scrollIntoView();
   }
+
+  onActivate(e:any){
+    console.log(e);
+  }
+
+
+  onScroll(e:Event){
+    
+    console.log(e);
+    //console.log(this.about);
+    //console.log(window.scrollbars);
+    //console.log(this.about);
+    //console.log(window.);
+   //document.getElementById("first")?.addEventListener("");
+    
+  }
+
+  onElementView(e:any){
+    //console.log(e);
+  }
+
+  @HostListener('window:mouseMoving', ['$event'])
+  onElementView1(e:any){
+    console.log(e);
+  }
+
+
+
 
 }

@@ -1,6 +1,27 @@
+@import '../styles.scss';
+//@import url("../styles.scss");
+
 .sidebar{
     height: 100%;
-    width: 12%;
+    width: 50%;
+    position: fixed;
+    background-color: $background-color;
+    color: $on-background-color;
+    font-family: $font;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    overflow-y: auto;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    right: 0;
+    background-color: $background-color;
+    font-family: $font;
+    //cursor: rounded;
 }
 
 .right-sidebar{
@@ -14,27 +35,53 @@
 }
 
 .example-container {
-    display: flex;
-    flex-direction: column;
+    //display: flex;
+    //flex-direction: column;
     position: absolute;
+    //overflow-y: auto;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: #1f1b16;
+    //background-color: #1f1b16;
+    font-family: $font;
+    cursor: rounded;
     
 }
 
 .container-item{
-    width: 100%;
+    width: 50%;
     height: 100%;
+    top: 0;
+    bottom: 0;
 }
 
 .example-sidenav-container {
     /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
        causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
+    //position: absolute;
     flex: 1;
-    overflow: hidden;
+    //align-self: stretch;
+    //overflow: hidden;
     background-color: #1f1b16;
+    color: beige;
+    font-family: $font;
+  }
+
+  rounded{
+    // width: 30px;
+    // height: 30px;
+    // border: 2px solid #fff;
+    // background-color: #fff;
+    // border-radius: 50%;
+    // z-index: 99999;
+    width:100px;
+    height: 100px;
+    position: relative;
+    //background: rgb(2,0,36);
+    background: radial-gradient(circle, rgba(38, 31, 167, 90) 25%, rgba(15, 197, 233, 90) 25%, rgba(39, 39, 172, 90) 30%);
+    background-color: #FFFFFFFF;
+    border-radius: 50px;
+    z-index: 99999;
   }
   

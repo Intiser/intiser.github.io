@@ -19,6 +19,8 @@ import { StudyComponent } from './study/study.component';
 import {MatStepperModule} from '@angular/material/stepper';
 import { HttpClientModule } from '@angular/common/http';
 import {MatExpansionModule} from '@angular/material/expansion';
+import { VertcialTabModule } from './custom/vertcial-tab/vertcial-tab.module';
+import { MatListModule } from '@angular/material/list';
 
 
 @NgModule({
@@ -44,7 +46,9 @@ import {MatExpansionModule} from '@angular/material/expansion';
     MatGridListModule,
     MatTabsModule,
     MatStepperModule,
-    HttpClientModule
+    HttpClientModule,
+    VertcialTabModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

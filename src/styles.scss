@@ -6,7 +6,7 @@
 // @import url(/src/style/tokens.css);
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; overflow: hidden; }
+body { margin: 0; font-family: Verdana, Geneva, Tahoma, sans-serif; overflow: hidden; }
 
 .background{
     background-color: #1f1b16;
@@ -16,161 +16,295 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; overflow: h
     $primary-color: #f8bc49;
 }
 
+@font-face {
+  font-family: ubuntu;
+  src: url(assets/fonts/UbuntuMono-Regular.ttf) format("opentype");
+}
 
-// $md-primary: (
-//   0: #000000,
-//   10: #271900,
-//   20: #422c00,
-//   25: #503700,
-//   30: #5e4100,
-//   35: #6d4c00,
-//   40: #7d5800,
-//   50: #9c6f00,
-//   60: #bc8711,
-//   70: #daa12f,
-//   80: #f8bc49,
-//   90: #ffdea9,
-//   95: #ffeed8,
-//   98: #fff8f3,
-//   99: #fffbff,
-//   100: #ffffff,
+@font-face {
+  font-family: ubuntu-bold;
+  src: url(assets/fonts/UbuntuMono-Bold.ttf) format("opentype");
+}
+
+$background-color: #1a1c18;
+$on-background-color: #e3e3dc;
+$surface-color: #1a1c18;
+$on-surface-color:#e3e3dc;
+
+$primary-color: #98d781;
+$on-primary-color: #073900;
+$primary-container-color: #1a520c;
+$on-primary-container-color: #b3f39b;
+
+
+$secondary-color: #bccbb1;
+$on-secondary-color: #273421;
+$secondary-container-color: #3d4b36;
+$on-secondary-container-color: #d7e7cc;
+
+
+$tertiary-color: #a0cfd1;
+$on-tertiary-color: #003739;
+$tertiary-container-color: #1e4e50;
+$on-tertiary-container-color: #bcebed;
+
+
+$error-color: #ffb4ab;
+$on-error-color: #690005;
+$error-container-color: #93000a;
+$on-error-container-color: #ffdad6;
+
+
+//$title-text-color: #e3e3dc;
+
+$outline-color: #8d9387;
+$surfface-variant-color: #43483f;
+$on-surface-variant-color: #c3c8bc;
+
+
+
+//$font: Verdana, Geneva, Tahoma, sans-serif;
+$font: ubuntu;
+$font-bold: ubuntu-bold;
+
+
+
+$md-primary: (
+  50: #271900,
+  100: #422c00,
+  200: #503700,
+  300: #5e4100,
+  400: #6d4c00,
+  500: #7d5800,
+  600: #9c6f00,
+  700: #bc8711,
+  800: #daa12f,
+  900: #f8bc49,
+  A100: #ffdea9,
+  A200: #ffeed8,
+  A400: #fff8f3,
+  A700: #fffbff,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #000000,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #ffdea9,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+$md-accent: (
+    50: #032100,
+    100: #073900,
+    200: #0c4601,
+    300: #1a520c,
+    400: #275e18,
+    500: #336b23,
+    600: #4b843a,
+    700: #649f51,
+    800: #7eba69,
+    900: #98d781,
+    A100: #b3f39b,
+    A200: #cbffb5,
+    A300: #edffe0,
+    A700: #f7ffed,
+    contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #000000,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+$md-alternative: (
+  50: #f3fcfb,
+  100: #e1f8f5,
+  200: #cdf3ef,
+  300: #b9eee9,
+  400: #aaebe4,
+  500: #9be7df,
+  600: #93e4db,
+  700: #89e0d7,
+  800: #7fddd2,
+  900: #6dd7ca,
+  A100: #ffffff,
+  A200: #ffffff,
+  A400: #e8fffc,
+  A700: #cffff9,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #000000,
+    700: #000000,
+    800: #000000,
+    900: #000000,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+$md-warn: (
+  50: #fcf2e7,
+  100: #f8dec3,
+  200: #f3c89c,
+  300: #eeb274,
+  400: #eaa256,
+  500: #e69138,
+  600: #e38932,
+  700: #df7e2b,
+  800: #db7424,
+  900: #d56217,
+  A100: #ffffff,
+  A200: #ffe3d4,
+  A400: #ffc3a1,
+  A700: #ffb287,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #000000,
+    700: #000000,
+    800: #000000,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+$md-error: (
+  50: #f9e0e0,
+  100: #f0b3b3,
+  200: #e68080,
+  300: #db4d4d,
+  400: #d42626,
+  500: #cc0000,
+  600: #c70000,
+  700: #c00000,
+  800: #b90000,
+  900: #ad0000,
+  A100: #ffd7d7,
+  A200: #ffa4a4,
+  A400: #ff7171,
+  A700: #ff5858,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #ffffff,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+
+@include mat.core();
+
+$my-primary: mat.define-palette($md-primary, A100);
+$my-accent: mat.define-palette($md-accent, A100);
+$my-alternative: mat.define-palette($md-alternative, A100);
+$my-warn: mat.define-palette($md-warn, A100);
+$my-error: mat.define-palette($md-error, A100);
+ // @include mat.strong-focus-indicators();
+
+
+$dark-theme: mat.define-dark-theme((
+ color: (
+   primary: $my-primary,
+   accent: $my-accent,
+   alternative: $my-alternative,
+   warn: $my-warn,
+   error: $my-error,
+   background-color: #1f1b16,
+ ),
+  // Only include `typography` and `density` in the default dark theme.
+  typography: mat.define-typography-config(),
+  density: 0,
+));
+
+//@include mat.core-theme($dark-theme);
+//@include mat.button-theme($dark-theme);
+//@include mat.all-component-themes($dark-theme);
+
+// $my-dark-theme-background: (
+//   status-bar: green,
+//   app-bar:    mat.define-palette($md-primary, A100),
+//   background: orange,
+//   hover:      rgba(white, 0.04), 
+//   card:       mat.define-palette($md-accent, A100),
+//   dialog:     mat.define-palette($md-accent, 800),
+//   disabled-button: #FFFFFF66,
+//   raised-button: mat.define-palette($md-primary, 800),
+//   focused-button: #FFFFFF66,
+//   selected-button: mat.define-palette($md-accent, 900),
+//   selected-disabled-button: mat.define-palette($md-primary, 800),
+//   disabled-button-toggle: black,
+//   unselected-chip: mat.define-palette($md-accent, 700),
+//   disabled-list-option: black,
 // );
 
-// $md-accent: (
-//     0: #000000,
-//     10: #032100,
-//     20: #073900,
-//     25: #0c4601,
-//     30: #1a520c,
-//     35: #275e18,
-//     40: #336b23,
-//     50: #4b843a,
-//     60: #649f51,
-//     70: #7eba69,
-//     80: #98d781,
-//     90: #b3f39b,
-//     95: #cbffb5,
-//     98: #edffe0,
-//     99: #f7ffed,
-//     100: #ffffff,
-// );
+// @function modify-background($theme, $background-color) {
+//   // Replace the background in the color object's background palette.
+//   $theme-color: map-get($theme, color);
+//   $color-background-palette: map-get($theme-color, background);
+//   $color-background-palette: map-merge($color-background-palette, (background: $background-color));
+//   $color-background-palette: map-merge($color-background-palette, (raised-button: $background-color));
 
-// @include mat.core();
-// @include mat.strong-focus-indicators();
+//   // Replace the background in the background palette.
+//   $background-palette: map-get($theme, background);
+//   $background-palette: map-merge($background-palette, (background: $background-color));
+//   $background-palette: map-merge($background-palette, (raised-button: $background-color));
 
+//   // Merge the changes into a new theme.
+//   $modified-theme-color: map-merge($theme-color, (background: $color-background-palette));
+//   $modified-theme: map-merge($theme, (color: $modified-theme-color));
+//   $modified-theme: map-merge($modified-theme, (background: $background-palette));
 
-// $dark-theme: mat.define-dark-theme((
-//  color: (
-//    primary: $md-primary,
-//    accent: $md-accent,
-//  ),
-//   // Only include `typography` and `density` in the default dark theme.
-//   typography: mat.define-typography-config(),
-//   density: 0,
-// ));
+//   @return $modified-theme;
+// }
 
-// @include mat.core-theme($dark-theme);
-// @include mat.button-theme($dark-theme);
+// $modified-theme: modify-background($dark-theme, $my-dark-theme-background);
 
-// $md-alternative: (
-//   50: #f3fcfb,
-//   100: #e1f8f5,
-//   200: #cdf3ef,
-//   300: #b9eee9,
-//   400: #aaebe4,
-//   500: #9be7df,
-//   600: #93e4db,
-//   700: #89e0d7,
-//   800: #7fddd2,
-//   900: #6dd7ca,
-//   A100: #ffffff,
-//   A200: #ffffff,
-//   A400: #e8fffc,
-//   A700: #cffff9,
-//   contrast: (
-//     50: #000000,
-//     100: #000000,
-//     200: #000000,
-//     300: #000000,
-//     400: #000000,
-//     500: #000000,
-//     600: #000000,
-//     700: #000000,
-//     800: #000000,
-//     900: #000000,
-//     A100: #000000,
-//     A200: #000000,
-//     A400: #000000,
-//     A700: #000000,
-//   ),
-// );
-
-// $md-warn: (
-//   50: #fcf2e7,
-//   100: #f8dec3,
-//   200: #f3c89c,
-//   300: #eeb274,
-//   400: #eaa256,
-//   500: #e69138,
-//   600: #e38932,
-//   700: #df7e2b,
-//   800: #db7424,
-//   900: #d56217,
-//   A100: #ffffff,
-//   A200: #ffe3d4,
-//   A400: #ffc3a1,
-//   A700: #ffb287,
-//   contrast: (
-//     50: #000000,
-//     100: #000000,
-//     200: #000000,
-//     300: #000000,
-//     400: #000000,
-//     500: #000000,
-//     600: #000000,
-//     700: #000000,
-//     800: #000000,
-//     900: #ffffff,
-//     A100: #000000,
-//     A200: #000000,
-//     A400: #000000,
-//     A700: #000000,
-//   ),
-// );
-
-// $md-error: (
-//   50: #f9e0e0,
-//   100: #f0b3b3,
-//   200: #e68080,
-//   300: #db4d4d,
-//   400: #d42626,
-//   500: #cc0000,
-//   600: #c70000,
-//   700: #c00000,
-//   800: #b90000,
-//   900: #ad0000,
-//   A100: #ffd7d7,
-//   A200: #ffa4a4,
-//   A400: #ff7171,
-//   A700: #ff5858,
-//   contrast: (
-//     50: #000000,
-//     100: #000000,
-//     200: #000000,
-//     300: #ffffff,
-//     400: #ffffff,
-//     500: #ffffff,
-//     600: #ffffff,
-//     700: #ffffff,
-//     800: #ffffff,
-//     900: #ffffff,
-//     A100: #000000,
-//     A200: #000000,
-//     A400: #000000,
-//     A700: #000000,
-//   ),
-// );
-
+// @include mat.core-theme($modified-theme);
+// @include mat.button-theme($modified-theme);
+// @include mat.all-component-themes($modified-theme);
 
 
 // @include mat.core();
@@ -187,5 +321,63 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; overflow: h
 //   density: 0,
 // ));
 
+// @function modify-color($theme, $background-color, $variable) {
+//   // Replace the background in the color object's background palette.
+//   $theme-color: map-get($theme, color);
+//   $color-background-palette: map-get($theme-color, $variable);
+//   $color-background-palette: map-merge($color-background-palette, ($variable: $background-color));
+//   $color-background-palette: map-merge($color-background-palette, (raised-button: $background-color));
+
+//   // Replace the background in the background palette.
+//   $background-palette: map-get($theme, $variable);
+//   $background-palette: map-merge($background-palette, ($variable: $background-color));
+//   $background-palette: map-merge($background-palette, (raised-button: $background-color));
+
+//   // Merge the changes into a new theme.
+//   $modified-theme-color: map-merge($theme-color, ($variable: $color-background-palette));
+//   $modified-theme: map-merge($theme, (color: $modified-theme-color));
+//   $modified-theme: map-merge($modified-theme, ($variable: $background-palette));
+
+//   @return $modified-theme;
+// }
+
+// $modified-theme: modify-color($dark-theme, #1f1b16, background);
+// $modified-theme: modify-color($modified-theme, beige, second);
+
+//  @include mat.core-theme($modified-theme);
+//  @include mat.button-theme($modified-theme);
+//  @include mat.all-component-themes($modified-theme);
 
 
+// .title{
+//     font-size: 25px;
+//     text-align: left;
+//     font-style: bold;
+// }
+
+// .text-10{
+//     font-size: 14px;
+//     text-align: left;
+//     word-spacing: 5px;
+//     margin-top: 10px;
+//   }
+
+// .text-40{
+//     margin-top: 40px;
+//     font-size: 15px;
+//     text-align: left;
+//     font-style: bold;
+//     font-family:Verdana, Geneva, Tahoma, sans-serif;
+//     color: #eae1d9;
+//     width: 600px;
+// }
+
+//   .all-text-container{
+//     width: 100%;
+//     height: 100%;
+//     text-align: left;
+//     margin-left:15%;
+//     margin-bottom: 15%;
+//     margin-right: 15%;
+//     margin-top: 15%;
+// }
