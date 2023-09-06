@@ -8,40 +8,41 @@ import { EducationElement } from '../models/education-element';
 })
 export class StudyComponent implements OnInit {
 
-  data:EducationElement[] = [
+  tabsList:EducationElement[] = [
     {
-      to:"ongoing",
-      from:"01-10-2021",
+      date:"2023 Oct - Present",
       schoolName:"TU Chemnitz",
       degreeName:"Masters in Automotive Software Engineering",
-      description:"Lorem Ipsum Samplrum Norum donar durum"
+      description:"Lorem Ipsum Samplrum Norum donar durum",
+      focus: false
     },
     {
-      to:"ongoing",
-      from:"01-10-2021",
+      date:"2021 - 2023 Sep",
       schoolName:"TU Chemnitz",
       degreeName:"Masters in Automotive Software Engineering",
-      description:"Lorem Ipsum Samplrum Norum donar durum"
+      description:"Lorem Ipsum Samplrum Norum donar durum",
+      focus: false
     },
     {
-      to:"ongoing",
-      from:"01-10-2021",
+      date:"2013-2017",
       schoolName:"TU Chemnitz",
       degreeName:"Masters in Automotive Software Engineering",
-      description:"Lorem Ipsum Samplrum Norum donar durum"
-    },
-    {
-      to:"ongoing",
-      from:"01-10-2021",
-      schoolName:"TU Chemnitz",
-      degreeName:"Masters in Automotive Software Engineering",
-      description:"Lorem Ipsum Samplrum Norum donar durum"
+      description:"Lorem Ipsum Samplrum Norum donar durum",
+      focus: false
     },
   ];
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  mouseOver(item:any){
+    item.focus = true;
+  }
+
+  mouseOut(item:any){
+    item.focus = false;
   }
 
 }

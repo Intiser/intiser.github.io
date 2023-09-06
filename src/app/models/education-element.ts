@@ -1,7 +1,7 @@
 export class EducationElement{
-    to:string;
-    from:string;
-    schoolName:string;
-    degreeName:string;
-    description:string;
+    date?:string;
+    schoolName?:string;
+    degreeName?:string;
+    description?:string;
+    focus?:boolean;
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/compiler';
 import { PageConstants } from 'src/app/models/page-constants';
 import { PageService } from 'src/app/services/page-service';
+import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout'
 
 @Component({
   selector: 'app-sidebar',
@@ -55,21 +56,36 @@ export class SidebarComponent implements OnInit {
       page: PageConstants.STUDY,
       mouse: false
     },
-    {
-      title: "Contact",
-      page: PageConstants.CONTACT,
-      mouse: false
-    },
+    // {
+    //   title: "Contact",
+    //   page: PageConstants.CONTACT,
+    //   mouse: false
+    // },
   ]
 
 
-  className =  PageConstants.ABOUT;
+  className:String =  PageConstants.ABOUT;
 
-  constructor(private pageService:PageService) { 
+  constructor(private pageService:PageService,
+              private breakpointObserver:BreakpointObserver) { 
 
   }
 
   ngOnInit(): void {
+
+    this.pageService.getScrolledPage()
+      .subscribe((result)=>{
+        this.className = result;
+      });
+
+    this.breakpointObserver.observe([Breakpoints.Handset, 
+      Breakpoints.Tablet, 
+      Breakpoints.Web, 
+      Breakpoints.WebLandscape]).
+      subscribe((result)=>{
+        //console.log(result);
+      });
+
 
   }
 

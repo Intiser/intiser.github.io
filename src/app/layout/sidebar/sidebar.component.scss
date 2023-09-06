@@ -17,6 +17,7 @@
     padding-left: 40%;
     overflow: hidden;
     font-family: $font;
+    color: $on-background-color;
 }
 
 .info{
@@ -185,4 +186,9 @@
   'wght' 400,
   'GRAD' 0,
   'opsz' 48
+}
+
+::selection {
+  color: $on-primary-color;
+  background-color: $primary-color;
 }

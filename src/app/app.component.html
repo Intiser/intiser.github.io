@@ -6,9 +6,10 @@
 <app-experience></app-experience>
 </div>
 <router-outlet></router-outlet> -->
-<!-- <div class="rounded" [style.top]="showY" [style.left]="showX" #child></div> -->
 
-<div fxLayout="row" class="example-container"> 
+
+<div fxLayout="row" class="cursor-trial"> 
+    
     
     <!-- <mat-sidenav-container #document class="example-sidenav-container" >
         <mat-sidenav mode="side" class="sidebar" opened>
@@ -40,13 +41,19 @@
         </mat-sidenav-content>
     </mat-sidenav-container> -->
 
-    <div fxLayout="column">
+    <div [fxLayout]="webpotrait?'column':'row'">
 
-        <div class="sidebar">
+        <div class="sidebar" *ngIf="!webpotrait">
             <app-sidebar></app-sidebar>
         </div>
-        <div fxLayout="column" class="container">
-            <div id="first" (insideViewport)="onElementView($event)" (mousewheel)="onElementView($event)" (mousemove)="onElementView($event)" class="container-item"  #home> <app-landing></app-landing> </div>
+        <div fxLayout="column" [class]="webpotrait?'container-full':'container'" (scroll)="onScroll($event)" #element>
+
+            <div class="container-item" *ngIf="webpotrait">
+                <app-sidebar></app-sidebar>
+            </div>
+
+            <!-- <div id="first" (insideViewport)="onElementView($event)" (mousewheel)="onElementView($event)" (mousemove)="onElementView($event)" class="container-item"  #home>
+                 <app-landing></app-landing> </div> -->
             
             <div (scroll)="onScroll($event)" class="container-item" #about>
                 <app-about></app-about>
@@ -61,9 +68,9 @@
                 <app-study ></app-study>
                 </div>
 
-            <div class="container-item" #contact>
+            <!-- <div class="container-item" #contact>
                 <app-contact></app-contact> 
-            </div>
+            </div> -->
         </div>
 
     </div>
@@ -99,6 +106,6 @@
 
     </mat-sidenav-content> -->
 
-    
+    <div class="rounded" [style.top]="showY" [style.left]="showX" #child></div>
 
 </div> 

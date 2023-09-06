@@ -1,31 +1,42 @@
+@import "/src/styles.scss";
+
 .about{
     width: 100%;
-    height:100vh;
+    height:fit-content;
     overflow: hidden;
+    padding-top: 10%;
 }
 
 .all-text-container{
     width: 100%;
     height: 100%;
     text-align: left;
-    margin-left:15%;
+    //margin-left:15%;
     margin-bottom: 15%;
-    margin-top: 50px;
 }
 
 .title{
     font-size: 25px;
     text-align: left;
     font-style: bold;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    //font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .text{
+    width: 60%;
     margin-top: 40px;
+    margin-left: 16px;
     font-size: 15px;
     text-align: left;
     font-style: bold;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    color: #eae1d9;
+    font-size: 16px;
+    //font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color: $on-background-color;
+    opacity: 70%;
     width: 600px;
 }
+
+::selection {
+    color: $on-primary-color;
+    background-color: $primary-color;
+  }
