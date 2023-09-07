@@ -35,3 +35,14 @@
     
 
 </div>
+
+<div class="theme-select" fxLayout="column">
+
+    <div class="circeled" (mouseover)="mouseOverIcon()" (mouseout)="mouseOutIcon()" (click)="changeTheme()">
+        <mat-icon *ngIf="selectedTheme == ThemeConstants.DARK" [class]="mouseOnIcon?'material-icons-filled icon-selected':'material-icons-outlined icon'">light_mode</mat-icon>
+        <mat-icon *ngIf="selectedTheme == ThemeConstants.LIGHT" [class]="mouseOnIcon?'material-icons-filled icon-selected':'material-icons-outlined icon'">dark_mode</mat-icon>
+        <!-- <mat-icon class="material-icons-filled">light_mode</mat-icon> -->
+    </div>
+
+    
+</div>

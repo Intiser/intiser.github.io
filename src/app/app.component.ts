@@ -3,6 +3,8 @@ import { PageService } from './services/page-service';
 import { PageConstants } from './models/page-constants';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { fromEvent} from 'rxjs';
+import { ThemeService } from './services/theme-service';
+import { ThemeConstants } from './services/theme-constants';
 
 @Component({
   selector: 'app-root',
@@ -12,187 +14,181 @@ import { fromEvent} from 'rxjs';
 export class AppComponent implements OnInit{
   title = 'intiser_portfolio';
 
-  PageConstants = PageConstants;
-
-  @ViewChild('home')
-  home: ElementRef;
-
-  @ViewChild('experience')
-  experience: ElementRef;
-
-  @ViewChild('study')
-  study: ElementRef;
-
-  @ViewChild('about')
-  about: ElementRef;
-
-  @ViewChild('contact')
-  contact: ElementRef;
-
-  @ViewChild('element')
-  element: ElementRef;
-
-  showX = "100px";
-  showY = "100px";
-
-  webpotrait = false;
-
-  @ViewChild('child') child:ElementRef;
+  
 
 
   constructor(private pageService:PageService,
-              private breakpointObserver:BreakpointObserver){
+              private breakpointObserver:BreakpointObserver,
+              private themeService:ThemeService){
     
   }
 
   ngOnInit(): void {
+    let styles_dark = [
+      { name: 'background-color', value: "#1a1c18" },
+      { name: 'on-background-color', value: "#e3e3dc" },
+      { name: 'surface-color', value: "#1a1c18" },
+      { name: 'on-surface-color', value: "#e3e3dc" },
 
-    console.log(this.about);
-    //console.log(this.disableScrollListerner);
-    //console.log(this.disableScrollListerner);
-    // fromEvent(window, 'scroll', { capture: true }).subscribe((event)=>{
-    //   // console.log(event);
-    //   // console.log(window.scrollX, window.scrollY);
-    //   // console.log(window.pageYOffset);
-    // });
+      { name: 'on-background-color-70', value: "#e3e3dcb4" },
+        //   background-color: #1a1c18;
+        // --on-background-color: #e3e3dc;
+        // --surface-color: #1a1c18;
+        // --on-surface-color:#e3e3dc;
 
-    fromEvent(window, 'scroll', { capture: true }).subscribe((event) => {
-      // Get the scroll position
-      const scrollPosition = window.scrollY || window.pageYOffset;
-      //console.log('Scroll Position:', scrollPosition);
+       // --on-background-color-70: #e3e3dcb4;
 
-      // You can perform actions based on the scroll position here
-    });
+      
 
-    this.breakpointObserver.observe([Breakpoints.Handset, 
-      Breakpoints.Tablet, 
-      Breakpoints.Web,
-      Breakpoints.WebPortrait, 
-      Breakpoints.WebLandscape]).
-      subscribe((result)=>{
-        this.webpotrait = false;
-        if(result.breakpoints[Breakpoints.WebPortrait] == true){
-          this.webpotrait = true;
-        }
-        console.log(this.webpotrait);
-      });
+      { name: 'primary-color', value: "#98d781" },
+      { name: 'on-primary-color', value: "#073900" },
+      { name: 'primary-container-color', value: "#1a520c" },
+      { name: 'on-primary-container-color', value: "#b3f39b" },
 
-    let cursorRounded = document.querySelector('.rounded');
+      { name: 'primary-container-color-alpha', value: "#1a520c33" },
+       // --primary-color: #98d781;
+      // --on-primary-color: #073900;
+      // --primary-container-color: #1a520c;
+      // --on-primary-container-color: #b3f39b;
 
-    window.addEventListener('mousemove', (e:any)=>{
-      //console.log(event);
+      // --primary-container-color-alpha: #1a520c33;
 
-      this.showX = (e.x - 300) + "px";
-      this.showY = (e.y - 300) + "px";
+      { name: 'secondary-color', value: "#bccbb1" },
+      { name: 'on-secondary-color', value: "#273421" },
+      { name: 'secondary-container-color', value: "#3d4b36" },
+      { name: 'on-secondary-container-color', value: "#d7e7cc" },
+      // --secondary-color: #bccbb1;
+      // --on-secondary-color: #273421;
+      // --secondary-container-color: #3d4b36;
+      // --on-secondary-container-color: #d7e7cc;
 
-    });
+      { name: 'tertiary-color', value: "#a0cfd1" },
+      { name: 'on-tertiary-color', value: "#003739" },
+      { name: 'tertiary-container-color', value: "#1e4e50" },
+      { name: 'on-tertiary-container-color', value: "#bcebed" },
 
-    this.pageService.getSelectedPage().
-      subscribe((result)=>{
-        console.log(result);
-        console.log(this.about);
-          if(result === PageConstants.ABOUT){
-            // this.about.nativeElement.scrollIntoView({ behavior: 'smooth' }, ()=>{
-            //   console.log("scroll done");
-            // });
-            this.scroll(this.about.nativeElement);
-          }
-          if(result === PageConstants.HOME){
-            //this.home.nativeElement.scrollIntoView({ behavior: 'smooth' });
-            
-            this.scroll(this.home.nativeElement);
-          } 
-          if(result === PageConstants.EXPERIENCE){
-            //this.experience.nativeElement.scrollIntoView({ behavior: 'smooth' });
-            this.scroll(this.experience.nativeElement);
-          } 
-          if(result === PageConstants.STUDY){
-            //this.study.nativeElement.scrollIntoView({ behavior: 'smooth' });
-            this.scroll(this.study.nativeElement);
-          } 
-          if(result === PageConstants.CONTACT){
-            //this.contact.nativeElement.scrollIntoView({ behavior: 'smooth' });
-            this.scroll(this.contact.nativeElement);
-          }  
+      // --tertiary-color: #a0cfd1;
+      // --on-tertiary-color: #003739;
+      // --tertiary-container-color: #1e4e50;
+      // --on-tertiary-container-color: #bcebed;
 
-      });
-  }
+      { name: 'error-color', value: "#ffb4ab" },
+      { name: 'on-error-color', value: "#690005" },
+      { name: 'error-container-color', value: "#93000a" },
+      { name: 'on-error-container-color', value: "#ffdad6" },
 
-  disableScrollListerner = false;
+      // --error-color: #ffb4ab;
+      // --on-error-color: #690005;
+      // --error-container-color: #93000a;
+      // --on-error-container-color: #ffdad6;
 
-  scroll(target: any){
-    this.disableScrollListerner = true;
-    console.log(this.disableScrollListerner);
-    target.scrollIntoView({ behavior: 'smooth' });
-    setTimeout(()=>{
-      this.disableScrollListerner = false;
-    }, 1000);
-    //console.log(this.disableScrollListerner);
-  }
+      { name: 'outline-color', value: "#8d9387" },
+      { name: 'surfface-variant-color', value: "#43483f" },
+      { name: 'on-surface-variant-color', value: "#c3c8bc" },
 
-  deactivateGone(){
+      // --outline-color: #8d9387;
+  // --surfface-variant-color: #43483f;
+  // --on-surface-variant-color: #c3c8bc;
 
-  }
 
+    ];
+
+
+    let styles_light = [
+      { name: 'background-color', value: "#fdfdf6" },
+      { name: 'on-background-color', value: "#1a1c18" },
+      { name: 'surface-color', value: "#fdfdf6" },
+      { name: 'on-surface-color', value: "#1a1c18" },
+
+      { name: 'on-background-color-70', value: "#1a1c18" },
+        //   background-color: #1a1c18;
+        // --on-background-color: #e3e3dc;
+        // --surface-color: #1a1c18;
+        // --on-surface-color:#e3e3dc;
+
+       // --on-background-color-70: #e3e3dcb4;
+
+      
+
+      { name: 'primary-color', value: "#326b23" },
+      { name: 'on-primary-color', value: "#ffffff" },
+      { name: 'primary-container-color', value: "#b3f49a" },
+      { name: 'on-primary-container-color', value: "#032100" },
+
+      { name: 'primary-container-color-alpha', value: "#b3f49a" },
+       // --primary-color: #98d781;
+      // --on-primary-color: #073900;
+      // --primary-container-color: #1a520c;
+      // --on-primary-container-color: #b3f39b;
+
+      // --primary-container-color-alpha: #1a520c33;
+
+      { name: 'secondary-color', value: "#54624d" },
+      { name: 'on-secondary-color', value: "#ffffff" },
+      { name: 'secondary-container-color', value: "#d7e7cc" },
+      { name: 'on-secondary-container-color', value: "#121f0e" },
+      // --secondary-color: #bccbb1;
+      // --on-secondary-color: #273421;
+      // --secondary-container-color: #3d4b36;
+      // --on-secondary-container-color: #d7e7cc;
+
+      { name: 'tertiary-color', value: "#386668" },
+      { name: 'on-tertiary-color', value: "#ffffff" },
+      { name: 'tertiary-container-color', value: "#bcebed" },
+      { name: 'on-tertiary-container-color', value: "#002021" },
+
+      // --tertiary-color: #a0cfd1;
+      // --on-tertiary-color: #003739;
+      // --tertiary-container-color: #1e4e50;
+      // --on-tertiary-container-color: #bcebed;
+
+      { name: 'error-color', value: "#ba1a1a" },
+      { name: 'on-error-color', value: "#ffffff" },
+      { name: 'error-container-color', value: "#ffdad6" },
+      { name: 'on-error-container-color', value: "#410002" },
+
+      // --error-color: #ffb4ab;
+      // --on-error-color: #690005;
+      // --error-container-color: #93000a;
+      // --on-error-container-color: #ffdad6;
+
+      { name: 'outline-color', value: "#8d9387" },
+      { name: 'surfface-variant-color', value: "#43483f" },
+      { name: 'on-surface-variant-color', value: "#c3c8bc" },
+
+      // --outline-color: #8d9387;
+  // --surfface-variant-color: #43483f;
+  // --on-surface-variant-color: #c3c8bc;
+
+
+    ];
   
+  
+    this.themeService.getTheme().
+      subscribe((theme)=>{
+          if(theme == ThemeConstants.DARK){
+            styles_dark.forEach(data => {
+                  console.log(`--${data.name}`);
+                  document.documentElement.style.setProperty(`--${data.name}`, data.value);
+            });  
+          }
+          else{
+            styles_light.forEach(data => {
+              console.log(`--${data.name}`);
+              document.documentElement.style.setProperty(`--${data.name}`, data.value);
+           });  
+          }
 
-  onActivate(e:any){
-    console.log(e);
-  }
+
+      });
 
 
-  onScroll(event:Event){
-    console.log(this.disableScrollListerner);
-    //console.log(this.about.nativeElement.offsetHeight);
-    if(this.disableScrollListerner){
-      return;
-    }
-    const target = event.target as HTMLElement;
-    const scrollPosition = target.scrollHeight - target.scrollTop;
-    const offsetY = 360; 
-    //console.log(scrollPosition, target.scrollHeight, target.scrollTop);
-    //console.log(target.scrollTop,  window.innerHeight);
-    const aboutH = this.about.nativeElement.offsetHeight;
-    const experienceH = this.experience.nativeElement.offsetHeight;
-    const educationH = this.study.nativeElement.offsetHeight;
 
-    const y = target.scrollTop;
-    const wy = window.innerHeight
-    if(y > (aboutH - (100) ) && y < (aboutH + experienceH - offsetY)){
-      this.pageService.setScrolledPageSubject(PageConstants.EXPERIENCE);
-    }
-    else if(y > (aboutH + experienceH - offsetY) && y < (3 * wy - offsetY)){
-      this.pageService.setScrolledPageSubject(PageConstants.STUDY);
-    }
-    // else if(y > (wy * 3 - offsetY) && y < (4 * wy - offsetY)){
-    //   this.pageService.setScrolledPageSubject(PageConstants.CONTACT);
-    // }
-    else{
-      this.pageService.setScrolledPageSubject(PageConstants.ABOUT);
-    }
-
+    
     
   }
 
-  onElementView(e:any){
-    //console.log(e);
-  }
-
-  // @HostListener('window:mouseMoving', ['$event'])
-  // onElementView1(e:any){
-  //   console.log(e);
-  // }
-
-  // @HostListener('window:scroll', ['$event'])
-  // onScrollTry(event: Event): void {
-  //   // You can continue to listen for scroll events in this method if needed.
-  //   // Get the scroll position
-  //   const scrollPosition = window.scrollY || window.pageYOffset;
-  //   console.log('Scroll Position:', scrollPosition);
-
-  //   // You can perform actions based on the scroll position here
-  // }
-
+  
 
 
 

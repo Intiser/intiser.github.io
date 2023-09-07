@@ -3,6 +3,8 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/compiler';
 import { PageConstants } from 'src/app/models/page-constants';
 import { PageService } from 'src/app/services/page-service';
 import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout'
+import { ThemeConstants } from 'src/app/services/theme-constants';
+import { ThemeService } from 'src/app/services/theme-service';
 
 @Component({
   selector: 'app-sidebar',
@@ -12,6 +14,7 @@ import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout'
 export class SidebarComponent implements OnInit {
 
   PageConstants = PageConstants;
+  ThemeConstants = ThemeConstants;
 
 
   icon_array = [
@@ -67,7 +70,8 @@ export class SidebarComponent implements OnInit {
   className:String =  PageConstants.ABOUT;
 
   constructor(private pageService:PageService,
-              private breakpointObserver:BreakpointObserver) { 
+              private breakpointObserver:BreakpointObserver, 
+              private themeService:ThemeService) { 
 
   }
 
@@ -100,6 +104,28 @@ export class SidebarComponent implements OnInit {
 
   mouseOut(item:any){
     item.mouse = false;
+  }
+
+  mouseOnIcon = false;
+  selectedTheme = ThemeConstants.DARK;
+
+  mouseOverIcon(){
+    this.mouseOnIcon = true;
+  }
+
+  mouseOutIcon(){
+    this.mouseOnIcon = false;
+  }
+
+  changeTheme(){
+    if(this.selectedTheme == ThemeConstants.DARK){
+      this.themeService.setTheme(ThemeConstants.LIGHT);
+      this.selectedTheme = ThemeConstants.LIGHT;
+    }
+    else{
+      this.themeService.setTheme(ThemeConstants.DARK);
+      this.selectedTheme = ThemeConstants.DARK;
+    }
   }
 
  

@@ -1,0 +1,101 @@
+@import '../../styles.scss';
+//@import url("../styles.scss");
+// .cursor-trial{
+//     cursor: url("../assets/cursor/Frame_1.png") 8 8 auto !important;
+// }
+
+
+.sidebar{
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    background-color: var(--background-color);
+    color: var(--on-background-color);
+    font-family: $font;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    overflow-y: auto;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    right: 0;
+    background-color: var(--background-color);
+    font-family: $font;
+    //cursor: rounded;
+}
+
+.container-full{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    overflow-y: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--background-color);
+    font-family: $font;
+    //cursor: rounded;
+}
+
+.right-sidebar{
+    height: 100%;
+    width: 5%;
+}
+
+.display{
+    height: 100%;
+    width: 100%;
+}
+
+.example-container {
+    //display: flex;
+    //flex-direction: column;
+    position: absolute;
+    //overflow-y: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    //background-color: #1f1b16;
+    font-family: $font;
+    cursor: rounded;
+    
+}
+
+.container-item{
+    width: 100%;
+    height: fill-content;
+    top: 0;
+    bottom: 0;
+    //border: 1px #fff solid;
+}
+
+  .rounded{
+    // width: 30px;
+    // height: 30px;
+    // border: 2px solid #fff;
+    // background-color: #fff;
+    // border-radius: 50%;
+    // z-index: 99999;
+    width:600px;
+    height: 600px;
+    position: relative;
+    //background: rgb(2,0,36);
+    background: radial-gradient(circle, rgba(var(--primary-color), 5) 10%, rgba(var(--primary-color), 5) 10%, rgba(var(--primary-color), 5) 10%);
+    opacity: 5%;
+    //background-color: #FFFFFFFF;
+    border-radius: 50%;
+    z-index: 99999;
+    pointer-events: none;
+  }
+  
+
+  ::selection {
+    color: var(--on-primary-color);
+    background-color: var(--primary-color);
+  }

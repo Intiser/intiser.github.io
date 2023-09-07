@@ -9,11 +9,46 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Verdana, Geneva, Tahoma, sans-serif; overflow: hidden; }
 
 .background{
-    background-color: #1f1b16;
+    //background-color: #1f1b16;
 }
 
 :root{
-    $primary-color: #f8bc49;
+  --background-color: #1a1c18;
+  --on-background-color: #e3e3dc;
+  --surface-color: #1a1c18;
+  --on-surface-color:#e3e3dc;
+
+  --on-background-color-70: #e3e3dcb4;
+  
+  --primary-color: #98d781;
+  --on-primary-color: #073900;
+  --primary-container-color: #1a520c;
+  --on-primary-container-color: #b3f39b;
+
+  --primary-container-color-alpha: #1a520c33;
+  
+  
+  --secondary-color: #bccbb1;
+  --on-secondary-color: #273421;
+  --secondary-container-color: #3d4b36;
+  --on-secondary-container-color: #d7e7cc;
+  
+  
+  --tertiary-color: #a0cfd1;
+  --on-tertiary-color: #003739;
+  --tertiary-container-color: #1e4e50;
+  --on-tertiary-container-color: #bcebed;
+  
+  
+  --error-color: #ffb4ab;
+  --on-error-color: #690005;
+  --error-container-color: #93000a;
+  --on-error-container-color: #ffdad6;
+
+  --outline-color: #8d9387;
+  --surfface-variant-color: #43483f;
+  --on-surface-variant-color: #c3c8bc;
+  
 }
 
 @font-face {
@@ -26,40 +61,40 @@ body { margin: 0; font-family: Verdana, Geneva, Tahoma, sans-serif; overflow: hi
   src: url(assets/fonts/UbuntuMono-Bold.ttf) format("opentype");
 }
 
-$background-color: #1a1c18;
-$on-background-color: #e3e3dc;
-$surface-color: #1a1c18;
-$on-surface-color:#e3e3dc;
+// $background-color: #1a1c18;
+// $on-background-color: #e3e3dc;
+// $surface-color: #1a1c18;
+// $on-surface-color:#e3e3dc;
 
-$primary-color: #98d781;
-$on-primary-color: #073900;
-$primary-container-color: #1a520c;
-$on-primary-container-color: #b3f39b;
-
-
-$secondary-color: #bccbb1;
-$on-secondary-color: #273421;
-$secondary-container-color: #3d4b36;
-$on-secondary-container-color: #d7e7cc;
+// $primary-color: #98d781;
+// $on-primary-color: #073900;
+// $primary-container-color: #1a520c;
+// $on-primary-container-color: #b3f39b;
 
 
-$tertiary-color: #a0cfd1;
-$on-tertiary-color: #003739;
-$tertiary-container-color: #1e4e50;
-$on-tertiary-container-color: #bcebed;
+// $secondary-color: #bccbb1;
+// $on-secondary-color: #273421;
+// $secondary-container-color: #3d4b36;
+// $on-secondary-container-color: #d7e7cc;
 
 
-$error-color: #ffb4ab;
-$on-error-color: #690005;
-$error-container-color: #93000a;
-$on-error-container-color: #ffdad6;
+// $tertiary-color: #a0cfd1;
+// $on-tertiary-color: #003739;
+// $tertiary-container-color: #1e4e50;
+// $on-tertiary-container-color: #bcebed;
+
+
+// $error-color: #ffb4ab;
+// $on-error-color: #690005;
+// $error-container-color: #93000a;
+// $on-error-container-color: #ffdad6;
 
 
 //$title-text-color: #e3e3dc;
 
-$outline-color: #8d9387;
-$surfface-variant-color: #43483f;
-$on-surface-variant-color: #c3c8bc;
+// $outline-color: #8d9387;
+// $surfface-variant-color: #43483f;
+// $on-surface-variant-color: #c3c8bc;
 
 
 

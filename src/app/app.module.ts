@@ -21,6 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { VertcialTabModule } from './custom/vertcial-tab/vertcial-tab.module';
 import { MatListModule } from '@angular/material/list';
+import { MainComponent } from './main/main.component';
+import { BlogComponent } from './blog/blog.component';
 
 
 @NgModule({
@@ -32,7 +34,9 @@ import { MatListModule } from '@angular/material/list';
     WorksComponent,
     ContactComponent,
     LandingComponent,
-    StudyComponent
+    StudyComponent,
+    MainComponent,
+    BlogComponent
   ],
   imports: [
     BrowserModule,

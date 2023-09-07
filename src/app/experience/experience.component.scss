@@ -23,7 +23,7 @@
 .container-selected{
   width: 70%;
   height: fit-content;
-  background-color: rgba($primary-container-color,0.2); 
+  background-color: var(--primary-container-color-alpha); 
   //filter: alpha(opacity=10);
   border-radius: 5px;
   margin-top: 20px;
@@ -39,7 +39,7 @@
   padding-left: 18px;
   width: 100%;
   height: 100%;
-  color: $on-background-color;
+  color: var(--on-background-color);
 }
 
 .year-selected{
@@ -47,7 +47,7 @@
   padding-left: 18px;
   width: 100%;
   height: 100%;
-  color: $on-primary-container-color;
+  color: var(--on-primary-container-color);
 
 }
 
@@ -63,22 +63,22 @@
   margin-top: 12px;
   width: 100%;
   font-size: 20px;
-  color: $on-background-color;
+  color: var(--on-background-color);
 }
 
 .title-selected{
   margin-top: 12px;
   width: 100%;
   font-size: 20px;
-  color: $on-primary-container-color;
+  color: var(--on-primary-container-color);
 }
 
 .subtitle{
   margin-top: 5px;
   width: 100%;
   font-size: 16px;
-  color: $on-background-color;
-  opacity: 70%;
+  color: var(--on-background-color-70);
+  //opacity: 70%;
 }
 
 .description{
@@ -87,8 +87,8 @@
   height: fit-content;
   width: fit-content;
   font-size: 14px;
-  color: $on-background-color;
-  opacity: 70%;
+  color: var(--on-background-color-70);
+  //opacity: 70%;
   //text-align: left;
 }
 
@@ -106,16 +106,16 @@
   padding-top: 5px;
   padding-bottom: 5px;
   //background-color: $tertiary-container-color;
-  background-color: $secondary-container-color;
+  background-color: var(--secondary-container-color);
   border-radius: 25px;
   //color: $on-tertiary-container-color;
-  color: $on-secondary-container-color;
+  color: var(--on-secondary-container-color);
   font-size: 12px;
 }
 
 ::selection {
-  color: $on-primary-color;
-  background-color: $primary-color;
+  color: var(--on-primary-color);
+  background-color: var(--primary-color);
 }
 
 //$tertiary-container-color $on-tertiary-container-color
