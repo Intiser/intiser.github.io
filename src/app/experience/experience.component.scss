@@ -7,12 +7,13 @@
     height: fit-content;
     overflow: hidden;
     padding-top: 10%;
+    padding-left: var(--content-padding-left);
 }
 
 
 
 .container{
-  width: 70%;
+  width: 80%;
   height: fit-content;
   //background-color: rgba($primary-container-color,0.1); 
   //filter: alpha(opacity=10);
@@ -21,7 +22,7 @@
 }
 
 .container-selected{
-  width: 70%;
+  width: 80%;
   height: fit-content;
   background-color: var(--primary-container-color-alpha); 
   //filter: alpha(opacity=10);
@@ -37,7 +38,7 @@
 .year{
   padding-top: 15px;
   padding-left: 18px;
-  width: 100%;
+  //width: 100%;
   height: 100%;
   color: var(--on-background-color);
 }
@@ -45,7 +46,7 @@
 .year-selected{
   padding-top: 15px;
   padding-left: 18px;
-  width: 100%;
+  //width: 100%;
   height: 100%;
   color: var(--on-primary-container-color);
 
@@ -53,6 +54,12 @@
 
 .year-container{
   width: 30%;
+}
+
+.year-container-inside{
+  flex-wrap: wrap;
+  margin-right: 15px;
+  //width: fit-content;
 }
 
 .rest-container{
@@ -97,20 +104,23 @@
   margin-top: 15px;
   margin-right: 8%;
   margin-bottom: 20px;
+  flex-wrap: wrap;
 }
 
 .tab{
   margin-right: 10px;
+  margin-top: 5px;
   padding-right: 10px;
   padding-left: 10px;
   padding-top: 5px;
   padding-bottom: 5px;
   //background-color: $tertiary-container-color;
-  background-color: var(--secondary-container-color);
+  background-color: var(--tertiary-container-color);
   border-radius: 25px;
   //color: $on-tertiary-container-color;
-  color: var(--on-secondary-container-color);
+  color: var(--on-tertiary-container-color);
   font-size: 12px;
+  
 }
 
 ::selection {
@@ -119,3 +129,73 @@
 }
 
 //$tertiary-container-color $on-tertiary-container-color
+
+@media (max-width:600px){
+
+  .title{
+    margin-top: 12px;
+    width: 100%;
+    font-size: 14px;
+    color: var(--on-background-color);
+  }
+  
+  .title-selected{
+    margin-top: 12px;
+    width: 100%;
+    font-size: 14px;
+    color: var(--on-primary-container-color);
+  }
+  
+  .subtitle{
+    margin-top: 5px;
+    width: 100%;
+    font-size: 12px;
+    color: var(--on-background-color-70);
+    //opacity: 70%;
+  }
+  
+  .description{
+    margin-top: 10px;
+    margin-right: 8%;
+    height: fit-content;
+    width: fit-content;
+    font-size: 10px;
+    color: var(--on-background-color-70);
+    //opacity: 70%;
+    //text-align: left;
+  }
+
+  .year{
+    padding-top: 15px;
+    padding-left: 18px;
+    //width: 100%;
+    height: 100%;
+    color: var(--on-background-color);
+    font-size: 10px;
+  }
+  
+  .year-selected{
+    padding-top: 15px;
+    padding-left: 18px;
+    //width: 100%;
+    height: 100%;
+    color: var(--on-primary-container-color);
+    font-size: 10px;
+  
+  }
+
+  .tab{
+    margin-right: 10px;
+    padding-right: 8px;
+    padding-left: 8px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    //background-color: $tertiary-container-color;
+    background-color: var(--secondary-container-color);
+    border-radius: 25px;
+    //color: $on-tertiary-container-color;
+    color: var(--on-secondary-container-color);
+    font-size: 10px;
+  }
+
+}

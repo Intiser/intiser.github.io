@@ -6,4 +6,6 @@ export class Tab{
     description?:string;
     tab?: string[];
     focus?: boolean;
+    from?: string;
+    to?: string;
 }

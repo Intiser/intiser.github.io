@@ -4,9 +4,18 @@
 
         <div *ngFor="let item of tabsList" fxLayout="row" [class]="item.focus?'container-selected':'container'"  (mouseover)="mouseOver(item)" (mouseout)="mouseOut(item)" >
           <div class="year-container">
-              <div [class]="item.focus?'year-selected':'year'">
-                  {{item.date}}
+              <div fxLayout="row" class="year-container-inside">
+                <div [class]="item.focus?'year-selected':'year'">
+                  {{item.from}}
+                </div>
+                <div [class]="item.focus?'year-selected':'year'">
+                  -
+                </div>
+                <div [class]="item.focus?'year-selected':'year'">
+                  {{item.to}}
+                </div>
               </div>
+              
           </div>
           <div class="rest-container" fxLayout="column">
               <div [class]="item.focus?'title-selected':'title'">

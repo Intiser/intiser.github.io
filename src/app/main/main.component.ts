@@ -60,17 +60,22 @@ export class MainComponent implements OnInit {
       // You can perform actions based on the scroll position here
     });
 
-    this.breakpointObserver.observe([Breakpoints.Handset, 
-      Breakpoints.Tablet, 
-      Breakpoints.Web,
+    this.breakpointObserver.observe([
       Breakpoints.WebPortrait, 
-      Breakpoints.WebLandscape]).
+      Breakpoints.HandsetLandscape,
+      Breakpoints.HandsetPortrait,
+      Breakpoints.TabletLandscape,
+      Breakpoints.TabletPortrait]).
       subscribe((result)=>{
         this.webpotrait = false;
         if(result.breakpoints[Breakpoints.WebPortrait] == true){
+          
+        }
+        if(result.matches){
           this.webpotrait = true;
         }
-        console.log(this.webpotrait);
+
+        console.log(result);
       });
 
     let cursorRounded = document.querySelector('.rounded');
@@ -85,8 +90,8 @@ export class MainComponent implements OnInit {
 
     this.pageService.getSelectedPage().
       subscribe((result)=>{
-        console.log(result);
-        console.log(this.about);
+        //console.log(result);
+        //console.log(this.about);
           if(result === PageConstants.ABOUT){
             // this.about.nativeElement.scrollIntoView({ behavior: 'smooth' }, ()=>{
             //   console.log("scroll done");
@@ -118,7 +123,7 @@ export class MainComponent implements OnInit {
 
   scroll(target: any){
     this.disableScrollListerner = true;
-    console.log(this.disableScrollListerner);
+    //console.log(this.disableScrollListerner);
     target.scrollIntoView({ behavior: 'smooth' });
     setTimeout(()=>{
       this.disableScrollListerner = false;
@@ -133,12 +138,12 @@ export class MainComponent implements OnInit {
   
 
   onActivate(e:any){
-    console.log(e);
+    //console.log(e);
   }
 
 
   onScroll(event:Event){
-    console.log(this.disableScrollListerner);
+    //console.log(this.disableScrollListerner);
     //console.log(this.about.nativeElement.offsetHeight);
     if(this.disableScrollListerner){
       return;

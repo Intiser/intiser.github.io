@@ -1,12 +1,20 @@
-<div class="study" fxLayout="row">
+<div class="study" fxLayout="column">
     
     <div fxLayout="column">
         <div *ngFor="let item of tabsList" fxLayout="row" [class]="item.focus?'containern-selected':'containern'"  (mouseover)="mouseOver(item)" (mouseout)="mouseOut(item)" >
-            <div class="year-container">
-                <div [class]="item.focus?'year-selected':'year'">
-                    {{item.date}}
-                </div>
-            </div>
+          <div class="year-container">
+            <div fxLayout="row" class="year-container-inside">
+              <div [class]="item.focus?'year-selected':'year'">
+                {{item.from}}
+              </div>
+              <div [class]="item.focus?'year-selected':'year'">
+                -
+              </div>
+              <div [class]="item.focus?'year-selected':'year'">
+                {{item.to}}
+              </div>
+            </div>  
+        </div>
             <div class="rest-container" fxLayout="column">
                 <div [class]="item.focus?'title-selected':'title'">
                   {{item.degreeName}} 
@@ -28,6 +36,10 @@
   
           </div>
         
+    </div>
+
+    <div>
+
     </div>
 
 </div>

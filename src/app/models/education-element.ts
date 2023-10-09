@@ -4,4 +4,6 @@ export class EducationElement{
     degreeName?:string;
     description?:string;
     focus?:boolean;
+    from?: string;
+    to?: string;
 }

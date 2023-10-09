@@ -16,12 +16,12 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.canvas as HTMLCanvasElement)
+    //console.log(this.canvas as HTMLCanvasElement)
     //this.animate(this.canvas)
   }
 
   animate(ctx: CanvasRenderingContext2D){
-    console.log(ctx)
+    //console.log(ctx)
   }
   
 

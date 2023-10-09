@@ -23,6 +23,7 @@ import { VertcialTabModule } from './custom/vertcial-tab/vertcial-tab.module';
 import { MatListModule } from '@angular/material/list';
 import { MainComponent } from './main/main.component';
 import { BlogComponent } from './blog/blog.component';
+import { FamilyTreeComponent } from './family-tree/family-tree.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { BlogComponent } from './blog/blog.component';
     LandingComponent,
     StudyComponent,
     MainComponent,
-    BlogComponent
+    BlogComponent,
+    FamilyTreeComponent
   ],
   imports: [
     BrowserModule,

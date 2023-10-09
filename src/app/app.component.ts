@@ -24,13 +24,15 @@ export class AppComponent implements OnInit{
   }
 
   ngOnInit(): void {
+
+    this.responsiveCalls();
     let styles_dark = [
       { name: 'background-color', value: "#1a1c18" },
       { name: 'on-background-color', value: "#e3e3dc" },
       { name: 'surface-color', value: "#1a1c18" },
       { name: 'on-surface-color', value: "#e3e3dc" },
 
-      { name: 'on-background-color-70', value: "#e3e3dcb4" },
+      { name: 'on-background-color-70', value: "#e3e3dcdd" },
         //   background-color: #1a1c18;
         // --on-background-color: #e3e3dc;
         // --surface-color: #1a1c18;
@@ -45,7 +47,7 @@ export class AppComponent implements OnInit{
       { name: 'primary-container-color', value: "#1a520c" },
       { name: 'on-primary-container-color', value: "#b3f39b" },
 
-      { name: 'primary-container-color-alpha', value: "#1a520c33" },
+      { name: 'primary-container-color-alpha', value: "#3d4b36" },
        // --primary-color: #98d781;
       // --on-primary-color: #073900;
       // --primary-container-color: #1a520c;
@@ -100,7 +102,7 @@ export class AppComponent implements OnInit{
       { name: 'surface-color', value: "#fdfdf6" },
       { name: 'on-surface-color', value: "#1a1c18" },
 
-      { name: 'on-background-color-70', value: "#1a1c18" },
+      { name: 'on-background-color-70', value: "#1a1c18dd" },
         //   background-color: #1a1c18;
         // --on-background-color: #e3e3dc;
         // --surface-color: #1a1c18;
@@ -112,10 +114,10 @@ export class AppComponent implements OnInit{
 
       { name: 'primary-color', value: "#326b23" },
       { name: 'on-primary-color', value: "#ffffff" },
-      { name: 'primary-container-color', value: "#b3f49a" },
-      { name: 'on-primary-container-color', value: "#032100" },
+      { name: 'primary-container-color', value: "#b2f49a" },
+      { name: 'on-primary-container-color', value: "#022100" },
 
-      { name: 'primary-container-color-alpha', value: "#b3f49a" },
+      { name: 'primary-container-color-alpha', value: "#b2f49a" },
        // --primary-color: #98d781;
       // --on-primary-color: #073900;
       // --primary-container-color: #1a520c;
@@ -168,13 +170,13 @@ export class AppComponent implements OnInit{
       subscribe((theme)=>{
           if(theme == ThemeConstants.DARK){
             styles_dark.forEach(data => {
-                  console.log(`--${data.name}`);
+                  //console.log(`--${data.name}`);
                   document.documentElement.style.setProperty(`--${data.name}`, data.value);
             });  
           }
           else{
             styles_light.forEach(data => {
-              console.log(`--${data.name}`);
+              //console.log(`--${data.name}`);
               document.documentElement.style.setProperty(`--${data.name}`, data.value);
            });  
           }
@@ -184,11 +186,73 @@ export class AppComponent implements OnInit{
 
 
 
-    
-    
   }
 
+  webpotrait = false;
   
+  responsiveCalls(){
+    
+    let mobile = [
+      { name: "side-padding-left",value:"10%" },
+      { name: "side-inside-left-margin",value:"10px" },
+      { name: "content-padding-left",value:"10%" },
+      { name: "content-inside-left-margin",value:"10px" },
+    ]
+
+
+    let potrait = [
+      { name: "side-padding-left",value:"20%" },
+      { name: "side-inside-left-margin",value:"18px" },
+      { name: "content-padding-left",value:"20%" },
+      { name: "content-inside-left-margin",value:"18px" },
+    ]
+
+    let landscape = [
+      { name: "side-padding-left",value:"40%"},
+      { name: "side-inside-left-margin",value:"0px" },
+      { name: "content-padding-left",value:"0%" },
+      { name: "content-inside-left-margin",value:"18px" },
+    ]
+
+    this.breakpointObserver.observe([
+      Breakpoints.WebPortrait, 
+      Breakpoints.HandsetLandscape,
+      Breakpoints.HandsetPortrait,
+      Breakpoints.TabletLandscape,
+      Breakpoints.TabletPortrait]).
+      subscribe((result)=>{
+        this.webpotrait = false;
+        if(result.breakpoints[Breakpoints.WebPortrait] == true){
+          
+        }
+        if(result.matches){
+          potrait.forEach(data => {
+            //console.log(`--${data.name}`);
+            document.documentElement.style.setProperty(`--${data.name}`, data.value);
+          });  
+        }
+        else{
+          landscape.forEach(data => {
+            //console.log(`--${data.name}`);
+            document.documentElement.style.setProperty(`--${data.name}`, data.value);
+          }); 
+
+
+        }
+
+        if(result.breakpoints[Breakpoints.HandsetLandscape] == true || result.breakpoints[Breakpoints.HandsetPortrait] == true){
+          mobile.forEach(data => {
+            //console.log(`--${data.name}`);
+            document.documentElement.style.setProperty(`--${data.name}`, data.value);
+          });  
+        }
+        
+
+        console.log(result);
+      });
+
+  }
+
 
 
 

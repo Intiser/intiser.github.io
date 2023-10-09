@@ -8,10 +8,10 @@
             Student At TU Chemnitz
         </div>
         <div class="ordinary-text">
-            I build accessible, inclusive products and digital experiences for the web.
+            Passionate coder, educator, and social impact enthusiast.
         </div>
     </div>
-    <div class="sidebar-items" fxLayout="column">
+    <div *ngIf="!webpotrait" class="sidebar-items" fxLayout="column">
 
         <div *ngFor="let item of array" class="custom-item-sidenav" fxLayout="row"  clickable (click)="clicked(item.page)" >
             <span [class]="className===item.page||item.mouse==true?'mat-item-left':'mat-item-left-blank'"></span>
@@ -23,12 +23,16 @@
 
     
     </div>
-    <div fxLayout="row" class="bottom">
+    <div fxLayout="row" [class]="webpotrait? 'relative':'bottom'">
         <div *ngFor="let item of icon_array" class="icon_div">
-            <span (mouseover)="mouseOver(item)" (mouseout)="mouseOut(item)">
-                <img [src]="item.mouse?item.alter:item.path" width="30px" class="icon-color">
+           <a target="_blank" [href]="item.link">
+            <span (mouseover)="mouseOver(item)" (mouseout)="mouseOut(item)" >
+                <img *ngIf="selectedTheme == ThemeConstants.DARK" [src]="item.mouse?item.alter:item.path" class="icon-color">
+                <img *ngIf="selectedTheme == ThemeConstants.LIGHT" [src]="item.mouse?item.light_alter:item.light_path" class="icon-color">
                 <!-- <img *ngIf="item.mouse==true" [src]="item.alter" width="40%" class="icon-color"> -->
             </span>
+           </a> 
+            
         </div>
     </div>
 
@@ -36,11 +40,11 @@
 
 </div>
 
-<div class="theme-select" fxLayout="column">
+<div *ngIf="!mobile" class= "theme-select" fxLayout="column">
 
-    <div class="circeled" (mouseover)="mouseOverIcon()" (mouseout)="mouseOutIcon()" (click)="changeTheme()">
-        <mat-icon *ngIf="selectedTheme == ThemeConstants.DARK" [class]="mouseOnIcon?'material-icons-filled icon-selected':'material-icons-outlined icon'">light_mode</mat-icon>
-        <mat-icon *ngIf="selectedTheme == ThemeConstants.LIGHT" [class]="mouseOnIcon?'material-icons-filled icon-selected':'material-icons-outlined icon'">dark_mode</mat-icon>
+    <div [class]="mouseOnIcon?'circeled-selected':'circeled'" (mouseover)="mouseOverIcon()" (mouseout)="mouseOutIcon()" (click)="changeTheme()">
+        <mat-icon *ngIf="selectedTheme == ThemeConstants.DARK" [class]="mouseOnIcon?'material-icons-filled icon-selected light':'material-icons-outlined icon light'">light_mode</mat-icon>
+        <mat-icon *ngIf="selectedTheme == ThemeConstants.LIGHT" [class]="mouseOnIcon?'material-icons-filled icon-selected dark':'material-icons-outlined icon dark'">dark_mode</mat-icon>
         <!-- <mat-icon class="material-icons-filled">light_mode</mat-icon> -->
     </div>
 

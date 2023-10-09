@@ -15,27 +15,41 @@ export class SidebarComponent implements OnInit {
 
   PageConstants = PageConstants;
   ThemeConstants = ThemeConstants;
+  selectedTheme = ThemeConstants.DARK;
+  mouseOnIcon = false;
 
 
   icon_array = [
     {
-      path:"../../../assets/svg/fb_outline.svg",
-      alter:"../../../assets/svg/fb_outline_100.svg",
+      path:"../../../assets/svg/new/mail.svg",
+      alter:"../../../assets/svg/new/mail_100.svg",
+      light_path:"../../../assets/svg/new/mail_black.svg",
+      light_alter:"../../../assets/svg/new/mail_100_black.svg",
+      link:"mailto:ahsanintiser@gmail.com",
       mouse: false
     },
     {
       path:"../../../assets/svg/github.svg",
       alter:"../../../assets/svg/github_100.svg",
+      light_path:"../../../assets/svg/new/github_black.svg",
+      light_alter:"../../../assets/svg/new/github_100_black.svg",
+      link:"https://github.com/Intiser",
       mouse: false
     },
     {
-      path:"../../../assets/svg/insta_outline.svg",
-      alter:"../../../assets/svg/insta_outline_100.svg",
+      path:"../../../assets/svg/new/instagram.svg",
+      alter:"../../../assets/svg/new/instagram_100.svg",
+      light_path:"../../../assets/svg/new/instagram_black.svg",
+      light_alter:"../../../assets/svg/new/instagram_100_black.svg",
+      link:"https://www.instagram.com/syedintiser",
       mouse: false
     },
     {
-      path:"../../../assets/svg/linkedin_outline.svg",
-      alter:"../../../assets/svg/linkedin_outline_100.svg",
+      path:"../../../assets/svg/new/linkedin.svg",
+      alter:"../../../assets/svg/new/linkedin_100.svg",
+      light_path:"../../../assets/svg/new/linkedin_black.svg",
+      light_alter:"../../../assets/svg/new/linkedin_100_black.svg",
+      link:"https://www.linkedin.com/in/syed-intiser-ahsan-b1a39411a",
       mouse: false
     },
     // {
@@ -66,6 +80,8 @@ export class SidebarComponent implements OnInit {
     // },
   ]
 
+  webpotrait = false;
+  mobile = false;
 
   className:String =  PageConstants.ABOUT;
 
@@ -77,18 +93,36 @@ export class SidebarComponent implements OnInit {
 
   ngOnInit(): void {
 
+    console.log(this.selectedTheme);
     this.pageService.getScrolledPage()
       .subscribe((result)=>{
         this.className = result;
       });
 
-    this.breakpointObserver.observe([Breakpoints.Handset, 
-      Breakpoints.Tablet, 
-      Breakpoints.Web, 
-      Breakpoints.WebLandscape]).
-      subscribe((result)=>{
-        //console.log(result);
-      });
+      this.breakpointObserver.observe([
+        Breakpoints.WebPortrait, 
+        Breakpoints.HandsetLandscape,
+        Breakpoints.HandsetPortrait,
+        Breakpoints.TabletLandscape,
+        Breakpoints.TabletPortrait]).
+        subscribe((result)=>{
+          this.webpotrait = false;
+          this.mobile = false;
+          if(result.breakpoints[Breakpoints.WebPortrait] == true){
+            
+          }
+          if(result.matches){
+            this.webpotrait = true;
+          }
+          if(result.breakpoints[Breakpoints.HandsetLandscape] == true){
+            this.mobile = true;
+          }
+          if(result.breakpoints[Breakpoints.HandsetPortrait] == true){
+            this.mobile = true;
+          }
+  
+          //console.log(result);
+        });
 
 
   }
@@ -106,8 +140,8 @@ export class SidebarComponent implements OnInit {
     item.mouse = false;
   }
 
-  mouseOnIcon = false;
-  selectedTheme = ThemeConstants.DARK;
+  
+  
 
   mouseOverIcon(){
     this.mouseOnIcon = true;
@@ -126,6 +160,14 @@ export class SidebarComponent implements OnInit {
       this.themeService.setTheme(ThemeConstants.DARK);
       this.selectedTheme = ThemeConstants.DARK;
     }
+  }
+
+  isThisThemeDark(variable:any){
+    console.log(variable);
+    if(variable == ThemeConstants.DARK){
+      return true;
+    }
+    return false;
   }
 
  

@@ -13,19 +13,32 @@ body { margin: 0; font-family: Verdana, Geneva, Tahoma, sans-serif; overflow: hi
 }
 
 :root{
+
+  // variables css
+
+  --side-padding-left: 40%;
+  --side-inside-left-margin: 0px;
+  --content-padding-left: 0%;
+  --content-inside-left-margin: 18px;
+
+
+
+  // color variables
+   
   --background-color: #1a1c18;
   --on-background-color: #e3e3dc;
   --surface-color: #1a1c18;
   --on-surface-color:#e3e3dc;
 
-  --on-background-color-70: #e3e3dcb4;
+  --on-background-color-70: #e3e3dcdd;
   
   --primary-color: #98d781;
   --on-primary-color: #073900;
   --primary-container-color: #1a520c;
   --on-primary-container-color: #b3f39b;
 
-  --primary-container-color-alpha: #1a520c33;
+  //--primary-container-color-alpha: #98d78133;
+  --primary-container-color-alpha: #3d4b36;
   
   
   --secondary-color: #bccbb1;
