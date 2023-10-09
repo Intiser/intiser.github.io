@@ -2,7 +2,8 @@
     
     <div fxLayout="column" class="list">
 
-        <div *ngFor="let item of tabsList" fxLayout="row" [class]="item.focus?'container-selected':'container'"  (mouseover)="mouseOver(item)" (mouseout)="mouseOut(item)" >
+        <div *ngFor="let item of tabsList" fxLayout="row" [class]="item.focus?'container-selected':'container'"  (touchstart)="mouseOver(item)"  (touchend)="mouseOut(item)"
+         (mouseover)="mouseOver(item)" (mouseout)="mouseOut(item)" >
           <div class="year-container">
               <div fxLayout="row" class="year-container-inside">
                 <div [class]="item.focus?'year-selected':'year'">
