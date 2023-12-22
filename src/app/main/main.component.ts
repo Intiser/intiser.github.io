@@ -55,7 +55,11 @@ export class MainComponent implements OnInit {
     fromEvent(window, 'scroll', { capture: true }).subscribe((event) => {
       // Get the scroll position
       const scrollPosition = window.scrollY || window.pageYOffset;
+      const target = event.target as HTMLElement;
       //console.log('Scroll Position:', scrollPosition);
+      const y = target.scrollTop;
+      //console.log(y);
+      this.onScroll(event);
 
       // You can perform actions based on the scroll position here
     });
@@ -158,6 +162,7 @@ export class MainComponent implements OnInit {
     const educationH = this.study.nativeElement.offsetHeight;
 
     const y = target.scrollTop;
+    console.log(y);
     const wy = window.innerHeight
     if(y > (aboutH - (100) ) && y < (aboutH + experienceH - offsetY)){
       this.pageService.setScrolledPageSubject(PageConstants.EXPERIENCE);
@@ -168,7 +173,7 @@ export class MainComponent implements OnInit {
     // else if(y > (wy * 3 - offsetY) && y < (4 * wy - offsetY)){
     //   this.pageService.setScrolledPageSubject(PageConstants.CONTACT);
     // }
-    else{
+    else if(y<aboutH - (100)){
       this.pageService.setScrolledPageSubject(PageConstants.ABOUT);
     }
 

@@ -16,9 +16,20 @@ export class ExperienceComponent implements OnInit {
 
   tabsList:Tab[] = [
     {
+      label: "TU Chemnitz",
+      title: "Student Assistant",
+      date: "2023 JUL - PRESENT",
+      from: "2022",
+      to: "Present",
+      //description: "Since June 2022, I have been an integral part of a large-scale project where I have played a pivotal role in maintaining, continuously enhancing, and seamlessly integrating new features into the project. This ongoing commitment has allowed me to deeply understand the project's intricacies and contribute effectively to its evolution. Throughout this journey, I've not only demonstrated proficiency in technologies such as Angular, Spring Boot Java, and Jasper Reports but have also shown my adaptability in working on a dynamic, long-term project. It's been an enriching experience contributing to the success and growth of this project.",
+      description: "Engaged in web development tasks as a student assistant at the University.",
+      tab: ["PHP","HTML","CSS", "MySQL"],
+      focus: false
+    },
+    {
       label: "Herton GMBH",
       title: "Software Engineer Fullstack",
-      date: "2022 - present",
+      date: "2022 - 2023 Nov",
       from: "2022",
       to: "Present",
       //description: "Since June 2022, I have been an integral part of a large-scale project where I have played a pivotal role in maintaining, continuously enhancing, and seamlessly integrating new features into the project. This ongoing commitment has allowed me to deeply understand the project's intricacies and contribute effectively to its evolution. Throughout this journey, I've not only demonstrated proficiency in technologies such as Angular, Spring Boot Java, and Jasper Reports but have also shown my adaptability in working on a dynamic, long-term project. It's been an enriching experience contributing to the success and growth of this project.",

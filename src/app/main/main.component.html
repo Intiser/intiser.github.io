@@ -1,12 +1,17 @@
-<div fxLayout="row" class="cursor-trial"> 
+
+<div class="sidebar" *ngIf="!webpotrait">
+    <app-sidebar></app-sidebar>
+</div>
+<div fxLayout="row" class="main" (scroll)="onScroll($event)" #element> 
     
+    <div class="sider">
+
+    </div>
 
     <div [fxLayout]="webpotrait?'column':'row'">
 
-        <div class="sidebar" *ngIf="!webpotrait">
-            <app-sidebar></app-sidebar>
-        </div>
-        <div fxLayout="column" [class]="webpotrait?'container-full':'container'" (scroll)="onScroll($event)" #element>
+        <!-- [class]="webpotrait?'container-full':'container'" -->
+        <div fxLayout="column" [class]="webpotrait?'container-full':'container'">
 
             <div class="container-item" *ngIf="webpotrait">
                 <app-sidebar></app-sidebar>
