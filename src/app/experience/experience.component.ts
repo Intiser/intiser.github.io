@@ -18,9 +18,9 @@ export class ExperienceComponent implements OnInit {
     {
       label: "TU Chemnitz",
       title: "Student Assistant",
-      date: "2023 Jul - Present",
+      date: "2023 Jul - 2024 Sep",
       from: "2023 Jul",
-      to: "Present",
+      to: "2024 Sep",
       //description: "Since June 2022, I have been an integral part of a large-scale project where I have played a pivotal role in maintaining, continuously enhancing, and seamlessly integrating new features into the project. This ongoing commitment has allowed me to deeply understand the project's intricacies and contribute effectively to its evolution. Throughout this journey, I've not only demonstrated proficiency in technologies such as Angular, Spring Boot Java, and Jasper Reports but have also shown my adaptability in working on a dynamic, long-term project. It's been an enriching experience contributing to the success and growth of this project.",
       description: "Engaged in web development tasks as a student assistant at the University.",
       tab: ["PHP","CSS","HTML", "MySQL"],
@@ -29,9 +29,9 @@ export class ExperienceComponent implements OnInit {
     {
       label: "Herton GMBH",
       title: "Software Engineer Fullstack",
-      date: "2022 - 2024 Feb",
+      date: "2022 - 2024 Sep",
       from: "2022",
-      to: "2024 Feb",
+      to: "2024 Sep",
       //description: "Since June 2022, I have been an integral part of a large-scale project where I have played a pivotal role in maintaining, continuously enhancing, and seamlessly integrating new features into the project. This ongoing commitment has allowed me to deeply understand the project's intricacies and contribute effectively to its evolution. Throughout this journey, I've not only demonstrated proficiency in technologies such as Angular, Spring Boot Java, and Jasper Reports but have also shown my adaptability in working on a dynamic, long-term project. It's been an enriching experience contributing to the success and growth of this project.",
       description: "Since June 2022 to February 2024, I've been actively involved in a large-scale project, taking on a key role in maintenance, feature enhancement, and seamless integration. This journey has showcased my proficiency in Angular, Spring Boot Java, and Jasper Reports, highlighting my adaptability in a dynamic, long-term project environment. I'm proud to have contributed to the project's success and growth.",
       tab: ["Typescript","Angular","Java", "SpringBoot", "MS SQL"],
